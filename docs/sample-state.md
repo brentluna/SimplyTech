@@ -25,12 +25,13 @@
           source: "Sample Feed"
         }
       }
-      collections: {
-        1: {
-          id: 1
-          name: "MyCollection"
-        }
-      }
+    }
+  },
+  collections: {
+    1: {
+      id: 1,
+      feed_id: 2,
+      name: "MyCollection"
     }
   },
   categories: {

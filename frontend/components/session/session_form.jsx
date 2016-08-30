@@ -11,9 +11,16 @@ class SessionForm extends React.Component {
     this.handleSignup = this.handleSignup.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.closeModal();
+    }
+  }
+
   update(field) {
     return e => { this.setState({[field]: e.currentTarget.value }); };
   }
+
 
   redirectIfLoggedIn(){
 		if (this.props.loggedIn){

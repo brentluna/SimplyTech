@@ -1,12 +1,15 @@
-import {connect} from 'react-redxu';
+import {connect} from 'react-redux';
 import Splash from './splash';
 
-const mapStateToProps = state => ({
-  loggedIn: Boolean(state.sesssion.currentUser)
-});
+const mapStateToProps = state => {
+  return ({
+    loggedIn: Boolean(state.session.currentUser)
+  });
 
-const mapDispachToProps = dispatch => ({
+};
 
-});
+// const mapDispachToProps = dispatch => ({
+//
+// });
 
-export default (mapStateToProps, mapDispachToProps)(Splash);
+export default connect(mapStateToProps, null)(Splash);

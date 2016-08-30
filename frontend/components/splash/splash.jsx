@@ -40,7 +40,7 @@ class Splash extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.openModal}>Get Started</button>
+        <button className='get-started-button' onClick={this.openModal}>Get Started</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

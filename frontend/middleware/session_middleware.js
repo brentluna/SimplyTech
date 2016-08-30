@@ -1,10 +1,14 @@
 import {receiveCurrentUser, receiveErrors, SessionConstants} from '../actions/session_actions';
 
 import { login, logout, signup } from '../util/session_api_util';
+import {hashHistory} from 'react-router';
 
 const SessionMiddleware = store => next => action => {
 
-  const success = user => store.dispatch(receiveCurrentUser(user));
+  const success = user => {
+    store.dispatch(receiveCurrentUser(user));
+    hashHistory.push('/feeds');
+  }
   const error = xhr => store.dispatch(receiveErrors(xhr.responseJSON));
 
   switch (action.type) {

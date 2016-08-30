@@ -25,7 +25,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 collection_id   | integer   | not null, indexed, unique
-subscription_id | integer   | not null, indexed, unique
+feed_id         | integer   | not null, indexed, unique
 
 ## categories
 column name     | data type | details

@@ -67,9 +67,11 @@
 
 
 .navbar-group {
-  background: var(--purple-color);
+  background: #eee;
+  border-bottom: 1px solid #ccc;
   padding: 20px;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 26px;
 }
 
 .app-children-container {

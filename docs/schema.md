@@ -7,12 +7,7 @@ id              | integer   | not null, primary key
 source          | string    | not null, indexed, unique
 RSS_feed        | string    | not null, indexed, unique
 
-## subscriptions
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-feed_id         | integer   | not null, indexed, unique
-user_id         | integer   | not null, indexed, unique
+
 
 ## collections
 column name     | data type | details
@@ -20,12 +15,14 @@ column name     | data type | details
 id              | integer   | not null, primary key
 title           | string    | not null, indexed, unique
 
-## collection_subscriptions
+## collection_feeds(subscriptions)
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 collection_id   | integer   | not null, indexed, unique
 feed_id         | integer   | not null, indexed, unique
+user_id         | integer   | not null, indexed, unique
+
 
 ## categories
 column name     | data type | details

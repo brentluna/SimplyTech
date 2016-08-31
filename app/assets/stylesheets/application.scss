@@ -280,3 +280,40 @@ input[type=submit]:hover {
   line-height: 0;
   font-size: 14px;
 }
+
+/* Feeds Index */
+.feeds-index-container {
+  padding: 100px;
+}
+
+.feed-index-item {
+  margin: 100px 40px;
+  bottom-border: 1px solid #eee;
+
+}
+
+.feed-index-item-title {
+
+}
+
+.feed-index-item-summary {
+  width: 40%;
+  display: inline;
+}
+.img-div {
+  float: left;
+  width: 200px;
+  height: 120px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.feed-index-item-image {
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+.feed-index-container {
+  float: left;
+}

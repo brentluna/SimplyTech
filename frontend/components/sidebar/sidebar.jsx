@@ -22,7 +22,9 @@ class Sidebar extends React.Component {
   footer() {
     let footer = '';
     if (this.props.loggedIn) {
-      footer = <button className='logout-button' value='Logout' onClick={this.props.logout}/>;
+      footer = <footer className='sidebar-footer'>
+        <button className='logout-button' onClick={this.props.logout}>Logout</button>
+      </footer>;
     }
     return footer;
   }

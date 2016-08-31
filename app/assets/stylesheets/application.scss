@@ -39,6 +39,7 @@
    line-height: 1;
    background: #fff;
    color: #000;
+   width: 100%;
  }
 
  ul {
@@ -67,11 +68,11 @@
 
 
 .navbar-group {
-  background: #eee;
+  // background: #eee;
   border-bottom: 1px solid #ccc;
-  padding: 20px;
+  padding: 15px;
   font-weight: bolder;
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .app-children-container {
@@ -80,7 +81,7 @@
 
 .sidebar {
   background: var(--purple-color);
-  width: 50px;
+  width: 60px;
   -webkit-transition: width .5s;
   -o-transition: width .5s;
   transition: width .5s;
@@ -89,30 +90,43 @@
   .get-started-button {
     display: none;
   }
+  .sidebar-footer {
+    display: none;
+  }
 }
 
 .sidebar:hover {
-  width: 200px;
+  width: 260px;
     .hamburger-icon {
       display: none;
     }
 
   .get-started-button {
-    margin: 300px 0px 0px 40px;
+    margin: auto;
+    margin-top: 20px;
     display: flex;
+    width: 200px;
+  }
+  .sidebar-footer {
+    display: flex;
+    width: 260px;
   }
 }
 
 
 .get-started-button {
-  padding: 20px;
+  padding: 15px;
+  margin: auto;
   border: 1px solid black;
-  border-radius: 10px;
-  min-width: 80.5px;
-  max-height: 15.5px;
+  border-radius: 5px;
+  min-width: 100.5px;
+  max-height: 5px;
   white-space: nowrap;
-  background: #eee;
-  box-shadow: 2px 2px 1px black;
+  background: var(--purple-color);
+  color: white;
+  text-align: center;
+  line-height: 0;
+  box-shadow: .5px .5px .5px lightgray;
 
 }
 .app-container {
@@ -126,11 +140,6 @@
   width: 25px;
 }
 
-.logout-button {
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 10px;
-}
 
 /**Login Form***/
 .login-input {
@@ -145,22 +154,78 @@
   background: lightgreen;
   padding: 10px;
   border-radius: 5px;
+  margin: 10px;
 }
 .login-button-container {
   display: flex;
-  justify-content: space-around;
+  margin: auto;
+  justify-content: space-between;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .login-form-container {
   display: flex;
+  width: 400px;
 }
 
 .modal-text {
   font-weight: bold;
   padding: 20px;
+}
+
+/* Splash Page */
+.splash-container {
+  background: #eee;
+  height: 80%;
+}
+
+.splash-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.splash-text {
+  font-size: 20px;
+  margin: 10px 100px;
+}
+
+.splash-container button {
+  margin: 10px 100px;
+}
+
+.splash-header {
+  margin: 70px  40px 10px 100px;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.splash-image {
+  background: purple;
+  height: 300px;
+  margin-left: 100px;
+  margin-top: 40px;
+  width: 70%;
+}
+
+/* footer */
+.sidebar-footer {
+  display: flex;
+
+}
+
+.logout-button {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 20px;
+  min-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
 }

@@ -16,7 +16,6 @@ class AppRouter extends React.Component {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={SplashContainer} />
-          {/* <Route path='/login' component={SplashContainer} /> */}
           <Route path='/feeds' component={FeedsIndexContainer} />
         </Route>
 

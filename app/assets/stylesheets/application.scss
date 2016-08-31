@@ -61,7 +61,7 @@
  /*------------*/
  :root {
  --purple-color: #966fd6 ;
- --background-color: #202426
+ --background-color: #202426;
 }
 
 
@@ -85,20 +85,82 @@
   -o-transition: width .5s;
   transition: width .5s;
   height: 100vh;
+  overflow: hidden;
+  .get-started-button {
+    display: none;
+  }
 }
 
 .sidebar:hover {
   width: 200px;
+    .hamburger-icon {
+      display: none;
+    }
 
+  .get-started-button {
+    margin: 300px 0px 0px 40px;
+    display: flex;
+  }
 }
 
 
 .get-started-button {
   padding: 20px;
+  border: 1px solid black;
   border-radius: 10px;
+  min-width: 80.5px;
+  max-height: 15.5px;
+  white-space: nowrap;
+  background: #eee;
+  box-shadow: 2px 2px 1px black;
+
 }
 .app-container {
   width: 100%;
   height: 100%;
   display: flex;
+}
+
+.hamburger-icon {
+  margin: 20px auto;
+  width: 25px;
+}
+
+.logout-button {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/**Login Form***/
+.login-input {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.login-button {
+  border: 1px solid #ccc;
+  background: lightgreen;
+  padding: 10px;
+  border-radius: 5px;
+}
+.login-button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-container {
+  display: flex;
+}
+
+.modal-text {
+  font-weight: bold;
+  padding: 20px;
 }

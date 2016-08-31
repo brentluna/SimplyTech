@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     this.state = {email: '', password: ''};
     this.handleLogin = this.handleLogin.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,6 +42,27 @@ class SessionForm extends React.Component {
     this.props.signup({user});
   }
 
+  demoLogin() {
+    let demoEmail = 'user@demo.com'.split('');
+    let demoPassword = 'password'.split('');
+
+    const that = this;
+    let interval = setInterval(() => {
+        if (demoEmail.length > 0) {
+          this.setState({email: `${this.state.email}${demoEmail.shift()}`});
+        } else if (demoPassword.length > 0){
+          this.setState({password: `${this.state.password}${demoPassword.shift()}`});
+        } else {
+
+          const user = this.state;
+          console.log(user);
+          this.props.login({user});
+          clearInterval(interval);
+        }
+
+    },200);
+  }
+
   renderErrors(){
 		return(
 			<ul>
@@ -58,18 +80,21 @@ class SessionForm extends React.Component {
       <div className='login-form-container'>
         <form  className='login-form'>
           {this.renderErrors()}
-          <label>Email:
+          <label>Email</label>
             <input type='text' value={this.state.email} onChange={this.update('email')} className='login-input'/>
-          </label>
 
-          <label>Password:
+
+          <label>Password</label>
             <input type='password' value={this.state.password} onChange={this.update('password')} className='login-input'/>
-          </label>
 
-          <input type='submit' value='Login' onClick={this.handleLogin} />
 
-          <input type='submit' value='Signup' onClick={this.handleSignup} />
+          <div className='login-button-container'>
+            <input type='submit' value='Login' onClick={this.handleLogin} className='login-button'/>
 
+            <input type='submit' value='Signup' onClick={this.handleSignup} className='login-button' />
+
+            <input type='submit' value='Demo Login' onClick={this.demoLogin} className='login-button' />
+          </div>
         </form>
       </div>
     );

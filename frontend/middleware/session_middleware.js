@@ -8,7 +8,7 @@ const SessionMiddleware = store => next => action => {
   const success = user => {
     store.dispatch(receiveCurrentUser(user));
     hashHistory.push('/feeds');
-  }
+  };
   const error = xhr => store.dispatch(receiveErrors(xhr.responseJSON));
 
   switch (action.type) {
@@ -17,8 +17,9 @@ const SessionMiddleware = store => next => action => {
       return next(action);
 
     case SessionConstants.LOGOUT:
-      logout(() => next(action));
-
+      const logoutSuccess = () => hashHistory.push('/');
+      logout(logoutSuccess);
+      return next(action);
     case SessionConstants.SIGNUP:
       signup(action.user, success, error);
       return next(action);

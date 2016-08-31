@@ -40,7 +40,7 @@ class GetStarted extends React.Component {
   render() {
     return (
       <div>
-        <button className='get-started-button' onClick={this.openModal}>Get Started</button>
+        <button className='get-started-button' onClick={this.openModal}>{this.props.text}</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

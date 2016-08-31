@@ -3,7 +3,8 @@ import Sidebar from './sidebar';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
-  loggedIn: Boolean(state.session.currentUser)
+  loggedIn: Boolean(state.session.currentUser),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

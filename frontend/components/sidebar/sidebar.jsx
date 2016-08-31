@@ -10,19 +10,22 @@ class Sidebar extends React.Component {
   }
 
   sideContent() {
+    let buttonText = 'Login/Signup';
     let sideContent;
-    if (this.props.loggedIn) {
-      sideContent = <h1>Logged In</h1>;
-    } else {
-      sideContent = <GetStarted />;
+    if (!this.props.loggedIn) {
+      sideContent = <GetStarted text={buttonText}/>;
+      return sideContent;
     }
-    return sideContent;
+
   }
 
   footer() {
     let footer = '';
     if (this.props.loggedIn) {
       footer = <footer className='sidebar-footer'>
+        <div className='footer-email'>
+          {this.props.currentUser.email}
+        </div>
         <button className='logout-button' onClick={this.props.logout}>Logout</button>
       </footer>;
     }
@@ -30,12 +33,7 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    let sideContent;
-    if (this.props.loggedIn) {
-      sideContent = <h1>Logged In</h1>;
-    } else {
-      sideContent = <GetStarted />;
-    }
+
     return (
       <aside className='sidebar'>
         <div className='hamburger-icon'>
@@ -43,6 +41,7 @@ class Sidebar extends React.Component {
         </div>
 
         {this.sideContent()}
+        <div className='spacer'></div>
         {this.footer()}
       </aside>
     );

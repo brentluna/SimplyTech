@@ -30,7 +30,13 @@
    vertical-align: inherit;
    color: inherit;
    background: transparent;
+   -webkit-appearance: none;
+
  }
+
+  button, link, a {
+    cursor: pointer;
+  }
 
  body {
    box-sizing: content-box;
@@ -60,6 +66,8 @@
    display: block;
  }
 
+
+
  /*------------*/
  :root {
  --purple-color: #966fd6 ;
@@ -85,6 +93,13 @@ input[type=submit]:hover {
 
 .app-children-container {
   flex: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-children {
+  height: 100%;
+  overflow: auto;
 }
 
 .sidebar {
@@ -120,6 +135,9 @@ input[type=submit]:hover {
     margin-top: 20px;
     display: flex;
     min-width: 200px;
+    justify-content: space-around;
+    text-align: center;
+    letter-spacing: 2px;
   }
   .sidebar-footer {
     align-self: flex-end;
@@ -143,7 +161,6 @@ input[type=submit]:hover {
   text-align: center;
   line-height: 0;
   font-weight: 100;
-  box-shadow: .5px .5px .5px lightgray;
 
 }
 .app-container {
@@ -164,6 +181,7 @@ input[type=submit]:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 15px;
+  padding: 10px;
 }
 
 .login-button {
@@ -236,6 +254,8 @@ input[type=submit]:hover {
   display: flex;
   padding: 10px;
   width: 200px;
+  color: #ccc;
+  border-top: 1px solid #eee;
   box-sizing: border-box;
 }
 
@@ -249,7 +269,7 @@ input[type=submit]:hover {
 }
 .logout-button {
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid #eee;
   border-radius: 10px;
   height: 20px;
   min-width: 80px;

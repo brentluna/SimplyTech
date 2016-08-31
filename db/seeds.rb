@@ -8,3 +8,6 @@
 
 
 User.create(email: 'user@demo.com', password: 'password')
+
+
+Feed.create(title: 'Gizmodo', url: 'http://feeds.gawker.com/gizmodo/full', description: 'General tech blog with a focus on gadgets', logo: 'http://agent31.net/wp-content/uploads/2011/02/gizmodo.png');

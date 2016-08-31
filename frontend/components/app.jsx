@@ -9,7 +9,9 @@ const App = ({children}) => (
     <SidebarContainer />
     <div className='app-children-container'>
       <NavBarContainer />
-      {children}
+      <div className="app-children">
+        {children}
+      </div>
     </div>
   </div>
 );

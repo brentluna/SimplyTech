@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
   }
 
   sideContent() {
-    let buttonText = 'Login/Signup';
+    let buttonText = 'Login / Signup';
     let sideContent;
     if (!this.props.loggedIn) {
       sideContent = <GetStarted text={buttonText}/>;

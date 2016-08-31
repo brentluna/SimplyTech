@@ -5,7 +5,7 @@ import AppRouter from './router';
 
 const Root = ({store}) => (
   <Provider store={store}>
-    <AppRouter />
+    <AppRouter store={store}/>
   </Provider>
 );
 

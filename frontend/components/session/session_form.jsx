@@ -55,12 +55,11 @@ class SessionForm extends React.Component {
         } else {
 
           const user = this.state;
-          console.log(user);
           this.props.login({user});
           clearInterval(interval);
         }
 
-    },200);
+    },80);
   }
 
   renderErrors(){

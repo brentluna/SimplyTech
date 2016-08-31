@@ -11,7 +11,6 @@ class Splash extends React.Component {
   render() {
     let buttonText ='Get Started';
     const button = <GetStarted className='splash-button' text={buttonText}/>;
-    console.log(button);
     return (
       <main className='splash-container'>
       <section className='splash-section'>

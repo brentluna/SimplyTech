@@ -9,9 +9,7 @@ class FeedsIndex extends React.Component {
   }
 
   parseSummary(summary) {
-
     return summary ? summary.replace(/<(?:.|\n)*?>/gm, '').split(" ").slice(0, 35).join(" ") + "..." : ""
-
   }
 
   feedLis() {

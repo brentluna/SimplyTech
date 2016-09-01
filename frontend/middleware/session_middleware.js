@@ -7,7 +7,21 @@ const SessionMiddleware = store => next => action => {
 
   const success = user => {
     store.dispatch(receiveCurrentUser(user));
-    hashHistory.push('/feeds');
+    let interval = setInterval(() => {
+      if (store.getState().session.currentUser)
+        hashHistory.push('/feeds');
+        clearInterval(interval);
+    }, 50);
+  };
+
+
+  const logoutSuccess = () => {
+    let interval = setInterval(() => {
+      if (!store.getState().session.currentUser) {
+        hashHistory.push('/');
+        clearInterval(interval);
+      }
+    }, 50);
   };
   const error = xhr => store.dispatch(receiveErrors(xhr.responseJSON));
 
@@ -17,7 +31,7 @@ const SessionMiddleware = store => next => action => {
       return next(action);
 
     case SessionConstants.LOGOUT:
-      const logoutSuccess = () => hashHistory.push('/');
+      // const logoutSuccess = () => hashHistory.push('/');
       logout(logoutSuccess);
       return next(action);
     case SessionConstants.SIGNUP:

@@ -14,7 +14,6 @@ class Sidebar extends React.Component {
     let sideContent;
     if (!this.props.loggedIn) {
       sideContent = <GetStarted text={buttonText}/>;
-      console.log(sideContent);
       return sideContent;
     }
 

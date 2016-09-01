@@ -11,3 +11,4 @@ User.create(email: 'user@demo.com', password: 'password')
 
 
 Feed.create(title: 'Gizmodo', url: 'http://feeds.gawker.com/gizmodo/full', description: 'General tech blog with a focus on gadgets', logo: 'http://agent31.net/wp-content/uploads/2011/02/gizmodo.png');
+Feed.create(title: 'Android Police', url: 'http://www.androidpolice.com/feed/', description: 'Android covereage at it\'s finest', logo: 'https://www.getqardio.com/wp-content/uploads/2015/05/Android-Police-logo.png');

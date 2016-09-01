@@ -36,7 +36,9 @@
 
   button, link, a {
     cursor: pointer;
+
   }
+
 
  body {
    box-sizing: content-box;
@@ -80,6 +82,7 @@ button:hover {
 
 input[type=submit]:hover {
   opacity: .8;
+
 }
 
 
@@ -100,6 +103,7 @@ input[type=submit]:hover {
 .app-children {
   height: 100%;
   overflow: auto;
+
 }
 
 .sidebar {
@@ -167,6 +171,7 @@ input[type=submit]:hover {
   width: 100%;
   height: 100%;
   display: flex;
+
 }
 
 .hamburger-icon {
@@ -233,6 +238,7 @@ input[type=submit]:hover {
 
 .splash-container button {
   margin: 10px 100px;
+
 }
 
 .splash-header {
@@ -287,8 +293,8 @@ input[type=submit]:hover {
 }
 
 .feed-index-item {
-  margin: 100px 40px;
-  bottom-border: 1px solid #eee;
+  max-width: 700px;
+  margin: 100px 40px auto;
 
 }
 
@@ -299,6 +305,8 @@ input[type=submit]:hover {
 .feed-index-item-summary {
   width: 40%;
   display: inline;
+  color: #424242;
+  font-weight: 300;
 }
 .img-div {
   float: left;
@@ -306,6 +314,7 @@ input[type=submit]:hover {
   height: 120px;
   margin-right: 15px;
   margin-bottom: 15px;
+
 }
 
 .feed-index-item-image {

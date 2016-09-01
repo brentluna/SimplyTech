@@ -1,7 +1,8 @@
 import React from 'react';
 
 const FeedIndexItem = ({image, title, summary}) => (
-  <li className='feed-index-item'>
+
+  <li className='feed-index-item group'>
   <div className='img-div'>
     <img className='feed-index-item-image' src={image} />
   </div>

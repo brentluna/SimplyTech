@@ -1,3 +1,78 @@
 // Place all the styles related to the api/Feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Feeds Index */
+.feeds-index-container {
+  padding: 100px;
+}
+
+.feed-index-item {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 150px;
+
+}
+
+.feed-index-item-title {
+
+}
+
+.feed-index-item-summary {
+  width: 40%;
+  display: inline;
+  color: #424242;
+  font-weight: 300;
+}
+.img-div {
+  float: left;
+  width: 200px;
+  height: 120px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+
+}
+
+.feed-index-item-image {
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+.feed-index-container {
+  float: left;
+}
+
+.reader-modal-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+.reader-modal-img-container {
+  margin: 15px;
+
+}
+
+.reader-modal-title {
+  margin: 15px;
+  font-size: 32px;
+}
+
+.reader-modal-content {
+  margin: 15px;
+  line-height: 3;
+}
+
+.index-text-container footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reader-modal-container a {
+  color: blue;
+  margin-bottom: 20px;
+}

@@ -1,3 +1,78 @@
 // Place all the styles related to the api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**Login Form***/
+.login-input {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 10px;
+}
+
+.login-button {
+  border: 1px solid #ccc;
+  background: lightgreen;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+.login-button-container {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.login-form-container {
+  display: flex;
+  width: 400px;
+}
+
+.modal-text {
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Splash Page */
+.splash-container {
+  background: #eee;
+  height: 80%;
+}
+
+.splash-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.splash-text {
+  font-size: 20px;
+  margin: 10px 100px;
+}
+
+.splash-container button {
+  margin: 10px 100px;
+
+}
+
+.splash-header {
+  margin: 70px  40px 10px 100px;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.splash-image {
+  background: purple;
+  height: 300px;
+  margin-left: 100px;
+  margin-top: 40px;
+  width: 70%;
+}

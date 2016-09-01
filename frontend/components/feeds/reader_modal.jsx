@@ -4,14 +4,30 @@ import Modal from 'react-modal';
 
 
 const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+  // content : {
+  //   top                   : '50%',
+  //   left                  : '50%',
+  //   right                 : 'auto',
+  //   bottom                : 'auto',
+  //   marginRight           : '-50%',
+  //   transform             : 'translate(-50%, -50%)'
+  // }
+  content: {
+    border: '1px solid black',
+    borderRadius: '4px',
+    bottom: 'auto',
+    minHeight: '10rem',
+    left: '50%',
+    padding: '2rem',
+    position: 'fixed',
+    right: 'auto',
+    top: '50%',
+    transform: 'translate(-50%,-50%)',
+    minWidth: '20rem',
+    width: '80%',
+    maxWidth: '60rem'
   }
+
 };
 
 

@@ -7,8 +7,8 @@ const FeedIndexItemDetail = ({title, image, content, author, feed, published, ur
     </div>
 
     <h1 className='reader-modal-title'>{title}</h1>
-    <p className='reader-modal-content'>{content}</p>
-    <a href={url} target='_blank'>Read More...</a>
+    <p className='reader-modal-content'>{content}<a href={url} target='_blank'> Read More</a></p>
+
 
     <footer className='popout-footer'>
       <p>Author: {author}</p>

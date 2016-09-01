@@ -76,3 +76,11 @@ object-fit: cover;
   color: blue;
   margin-bottom: 20px;
 }
+
+
+.popout-footer {
+  border-top: 1px solid #eee;
+  padding-top:  20px;
+  display: flex;
+  justify-content: space-between;
+}

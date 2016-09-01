@@ -9,7 +9,7 @@ class AppRouter extends React.Component {
   constructor(props) {
     super(props);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
-    this.fetchFeedsOnEnter = this.fetchFeedsOnEnter.bind(this);
+    // this.fetchFeedsOnEnter = this.fetchFeedsOnEnter.bind(this);
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
   }
 
@@ -20,12 +20,15 @@ class AppRouter extends React.Component {
     }
   }
 
-  _ensureLoggedIn(store, nextState, replace) {
-    if (!this.props.currentUser) {
+  _ensureLoggedIn(store) {
+    return (nextState, replace) => {
+      if (!this.props.currentUser) {
       replace('/');
-    } else {
-      return () => store.dispatch(fetchAllFeeds());
-    }
+      } else {
+        store.dispatch(fetchAllFeeds());
+      }
+    };
+
   }
 
   render() {
@@ -34,7 +37,7 @@ class AppRouter extends React.Component {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
-          <Route path='/feeds' component={FeedsIndexContainer} onEnter={this._ensureLoggedIn(this.props.store)}/>
+          <Route path='/feeds' component={FeedsIndexContainer} onEnter={this._ensureLoggedIn(store)}/>
         </Route>
 
       </Router>

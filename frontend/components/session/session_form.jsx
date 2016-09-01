@@ -20,7 +20,11 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e => { this.setState({[field]: e.currentTarget.value }); };
+    console.log("update");
+    return e => {
+      e.preventDefault();
+      this.setState({[field]: e.currentTarget.value});
+    };
   }
 
 
@@ -49,18 +53,20 @@ class SessionForm extends React.Component {
     this.resetFields();
   }
 
-  demoLogin() {
+  demoLogin(e) {
+    e.preventDefault();
     let demoEmail = 'user@demo.com'.split('');
     let demoPassword = 'password'.split('');
 
     const that = this;
     let interval = setInterval(() => {
+
         if (demoEmail.length > 0) {
           this.setState({email: `${this.state.email}${demoEmail.shift()}`});
+          console.log(this.state);
         } else if (demoPassword.length > 0){
           this.setState({password: `${this.state.password}${demoPassword.shift()}`});
         } else {
-
           const user = this.state;
           this.props.login({user});
           this.resetFields();

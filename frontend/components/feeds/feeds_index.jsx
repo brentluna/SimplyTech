@@ -1,5 +1,6 @@
 import React from 'react';
 import FeedIndexItem from './feed_index_item';
+import Loading from 'react-loading';
 
 class FeedsIndex extends React.Component {
   constructor(props) {
@@ -26,10 +27,12 @@ class FeedsIndex extends React.Component {
 
   render() {
     let content = null;
-    if (this.props.feeds) {
+    console.log(this.props.feeds);
+    if (Object.keys(this.props.feeds).length) {
       content = this.feedLis();
     } else {
-      content =<div>Loading</div>;
+      // debugger
+      content = <Loading type='bars' color='purple' />;
     }
     return (
       <main className='feeds-index-container'>

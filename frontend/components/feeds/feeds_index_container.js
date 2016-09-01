@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // fetchAllFeeds: () => dispatch(fetchAllFeeds())
+  fetchAllFeeds: () => dispatch(fetchAllFeeds())
 });
 
 

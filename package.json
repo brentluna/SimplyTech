@@ -36,6 +36,7 @@
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-icons": "^2.2.1",
+    "react-loading": "0.0.9",
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",

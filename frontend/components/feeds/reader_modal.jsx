@@ -46,7 +46,7 @@ class ReaderModal extends React.Component {
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles} >
-          <FeedIndexItemDetail title={this.props.title} image={this.props.image} content={this.props.content} />
+          <FeedIndexItemDetail title={this.props.title} image={this.props.image} content={this.props.content} url={this.props.url} author={this.props.author} published={this.props.published} feed={this.props.feed} />
           {/* <button onClick={this.closeModal}>close</button> */}
         </Modal>
       </div>

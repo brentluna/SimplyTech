@@ -15,7 +15,7 @@ class FeedsIndex extends React.Component {
       let feed = this.props.feeds[idx];
       for (let i = 0; i < feed.entries.length; i++) {
         let entry = feed.entries[i];
-        lis.push(<FeedIndexItem title={entry.title} summary={$.parseHTML(entry.summary)[1].innerText} url={entry.url} published={entry.published} image={entry.image}/>);
+        lis.push(<FeedIndexItem title={entry.title} summary={$.parseHTML(entry.summary)[1].innerText} url={entry.url} published={entry.published} image={entry.image} title={entry.title} author={entry.author} feed={feed.title}/>);
       }
     }
     return lis;

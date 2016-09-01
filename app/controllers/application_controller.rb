@@ -41,7 +41,8 @@ private
         summary: entry.summary,
         image: set_image(entry),
         url: entry.url,
-        published: entry.published,
+        author: entry.author,
+        published: entry.published.to_s,
         feed: source
       }
     end

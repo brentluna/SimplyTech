@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     this.handleLogin = this.handleLogin.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.resetFields = this.resetFields.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,17 +30,23 @@ class SessionForm extends React.Component {
 		}
 	}
 
+  resetFields() {
+    this.setState({email: '', password: ''});
+  }
+
 
   handleLogin(e) {
     e.preventDefault();
     const user = this.state;
     this.props.login({user});
+    this.resetFields();
   }
 
   handleSignup(e) {
     e.preventDefault();
     const user = this.state;
     this.props.signup({user});
+    this.resetFields();
   }
 
   demoLogin() {
@@ -56,6 +63,7 @@ class SessionForm extends React.Component {
 
           const user = this.state;
           this.props.login({user});
+          this.resetFields();
           clearInterval(interval);
         }
 

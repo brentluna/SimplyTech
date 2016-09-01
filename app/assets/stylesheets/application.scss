@@ -270,6 +270,13 @@ input[type=submit]:hover {
   margin-left: 10px;
 }
 
+.popout-footer {
+  border-top: 1px solid #eee;
+  padding-top:  20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .spacer {
   flex: 1;
 
@@ -351,4 +358,9 @@ object-fit: cover;
 .reader-modal-content {
   margin: 15px;
   line-height: 3;
+}
+
+.index-text-container footer {
+  display: flex;
+  justify-content: space-between;
 }

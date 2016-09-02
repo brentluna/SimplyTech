@@ -15,17 +15,16 @@ const customStyles = {
   content: {
     border: '1px solid black',
     borderRadius: '4px',
-    bottom: 'auto',
+    bottom: '0',
     minHeight: '10rem',
-    left: '50%',
     padding: '2rem',
     position: 'fixed',
-    right: 'auto',
-    top: '50%',
-    transform: 'translate(-50%,-50%)',
+    right: '0',
+    top: '0',
     minWidth: '20rem',
     width: '80%',
-    maxWidth: '60rem'
+    maxWidth: '60rem',
+    left: 'auto'
   }
 
 };

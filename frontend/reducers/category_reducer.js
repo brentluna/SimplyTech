@@ -4,9 +4,8 @@ import {merge} from 'lodash';
 const defaultState = [];
 
 const CategoryReducer = (state = defaultState, action ) => {
-
   switch (action.type) {
-    case CategoryConstants.RECEIVE_SINGLE_FEED:
+    case CategoryConstants.RECEIVE_SINGLE_CATEGORY:
       return ({}, action.category);
 
     case CategoryConstants.RECEIVE_ALL_CATEGORIES:

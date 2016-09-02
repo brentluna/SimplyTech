@@ -7,14 +7,13 @@ const CategoryMiddleware = store => next => action => {
     case CategoryConstants.FETCH_ALL_CATEGORIES:
       const allSuccess = (categories) => {
         store.dispatch(receiveAllCategories(categories));
-        // hashHistory.push('/categories');
       };
       fetchAllCategories(allSuccess);
       return next(action);
 
     case CategoryConstants.FETCH_SINGLE_CATEGORY:
-      const singleSuccess = category => store.dispatch(category);
-      fetchSingleCategory(singleSuccess);
+      const singleSuccess = category => store.dispatch(receiveSingleCategory(category));
+      fetchSingleCategory(action.id,singleSuccess);
       return next(action);
     default:
       return next(action);

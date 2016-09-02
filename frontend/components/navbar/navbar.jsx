@@ -15,7 +15,7 @@ class NavBar extends React.Component {
           <Link to='/feeds'><h2>SimplyTech</h2></Link>
           <div className='search-div'>
             <i className="material-icons md-24 md-light md-inactive">search</i>
-            <input className='search-input' type='text' placeholder='  SEARCH'/>
+            <input className='search-input' type='text' placeholder="SEARCH"/>
           </div>
         </nav>
       </section>

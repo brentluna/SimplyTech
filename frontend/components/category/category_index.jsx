@@ -13,7 +13,7 @@ class CategoryIndex extends React.Component {
     let lis= [];
     if (this.props.categories.length) {
       this.props.categories.forEach(category => {
-        lis.push(<CategoryIndexItem title={category.title} image={category.image} key={category.title} />);
+        lis.push(<CategoryIndexItem title={category.title} image={category.image} id={category.id} key={category.title} />);
       });
       return lis;
     }

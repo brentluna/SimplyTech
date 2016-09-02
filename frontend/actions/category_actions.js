@@ -10,23 +10,16 @@ export const receiveSingleCategory = (category) => ({
   category
 });
 
-export const receiveAllCategories = (categories) => {
-  return ({
+export const receiveAllCategories = (categories) => ({
     type: CategoryConstants.RECEIVE_ALL_CATEGORIES,
     categories
+});
 
-  })
-};
-
-export const fetchAllCategories = () => {
-  return (
-    {
-
+export const fetchAllCategories = () => ({
       type: CategoryConstants.FETCH_ALL_CATEGORIES
-    }
-  )
-};
+});
 
-export const fetchSingleCategory = () => ({
-  type: CategoryConstants.FETCH_SINGLE_CATEGORY
+export const fetchSingleCategory = (id) => ({
+  type: CategoryConstants.FETCH_SINGLE_CATEGORY,
+  id
 });

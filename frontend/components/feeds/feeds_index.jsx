@@ -31,7 +31,7 @@ class FeedsIndex extends React.Component {
       content = this.feedLis();
     } else {
       // debugger
-      content = <Loading type='bars' color='purple' />;
+      content = <Loading type='bars' color='#966fd6' style='width: 300px; height: 400px;' />;
     }
     return (
       <main className='feeds-index-container'>

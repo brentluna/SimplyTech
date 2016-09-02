@@ -8,7 +8,11 @@ class User < ActiveRecord::Base
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
+  has_many :collections
 
+  has_many :feeds,
+    through: :collections,
+    source: :feeds
 
 	def password=(password)
     @password = password

@@ -6,4 +6,10 @@ class Feed < ActiveRecord::Base
   has_many :categories,
     through: :feed_categories,
     source: :category
+
+  has_many :collections_feeds
+
+  has_many :collections,
+    through: :collections,
+    source: :feed
 end

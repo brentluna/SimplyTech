@@ -34,3 +34,17 @@ FeedCategory.create!([
   {feed_id: Feed.find_by(title: "Android Police").id, category_id: Category.find_by(title: "Android").id}
 
   ])
+
+
+Collection.create!([
+  {title: 'Best of Tech', user_id: User.find_by(email: 'user@demo.com').id},
+  {title: 'Mobile', user_id: User.find_by(email: 'user@demo.com').id},
+  {title: 'Work', user_id: User.find_by(email: 'user@demo.com').id}
+  ])
+
+CollectionFeed.create!([
+  {collection_id: Collection.find_by(title: 'Work').id, feed_id: Feed.find_by(title: 'Gizmodo').id},
+  {collection_id: Collection.find_by(title: 'Work').id, feed_id: Feed.find_by(title: 'Digital Trends').id},
+  {collection_id: Collection.find_by(title: 'Mobile').id, feed_id: Feed.find_by(title: 'Android Police').id},
+  {collection_id: Collection.find_by(title: 'Best of Tech').id, feed_id: Feed.find_by(title: 'Wired').id},
+  ])

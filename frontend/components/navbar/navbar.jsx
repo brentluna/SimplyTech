@@ -11,6 +11,8 @@ class NavBar extends React.Component {
       <section className='navbar-group'>
         <nav>
           <h2>SimplyTech</h2>
+          <input type='text' placeholder=<i class="material-icons">search</i> />
+
         </nav>
       </section>
     );

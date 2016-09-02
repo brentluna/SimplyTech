@@ -35,7 +35,6 @@ class AppRouter extends React.Component {
 
   _categories(store) {
     return (nextState, replace) => {
-      console.log('fetching catagories');
       if (!this.props.currentUser) {
       replace('/');
       } else {

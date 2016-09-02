@@ -33,7 +33,6 @@ private
   end
 
   def feedjira_entries(feed)
-    current = Time.new
     feed_obj = Feedjira::Feed.fetch_and_parse(feed.url)
     parsed_feed_entries = []
     feed_obj.entries.each do |entry|
@@ -47,7 +46,6 @@ private
         feed: feed
       }
     end
-    puts Time.now - current
     parsed_feed_entries
   end
 

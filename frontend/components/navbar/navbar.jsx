@@ -10,11 +10,13 @@ class NavBar extends React.Component {
   render() {
     return (
       <section className='navbar-group'>
-        <nav>
+        <nav className='navbar-nav'>
 
-        <Link to='/feeds'><h2>SimplyTech</h2></Link>
-          {/* <input type='text' placeholder=<i class="material-icons">search</i> /> */}
-
+          <Link to='/feeds'><h2>SimplyTech</h2></Link>
+          <div className='search-div'>
+            <i className="material-icons md-24 md-light md-inactive">search</i>
+            <input className='search-input' type='text' placeholder='  SEARCH'/>
+          </div>
         </nav>
       </section>
     );

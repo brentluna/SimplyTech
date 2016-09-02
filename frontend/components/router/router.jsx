@@ -35,6 +35,7 @@ class AppRouter extends React.Component {
 
   _categories(store) {
     return (nextState, replace) => {
+      console.log('fetching catagories');
       if (!this.props.currentUser) {
       replace('/');
       } else {
@@ -50,7 +51,7 @@ class AppRouter extends React.Component {
         <Route path='/' component={App}>
           <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
           <Route path='/feeds' component={FeedsIndexContainer} onEnter={this._ensureLoggedIn(store)}/>
-          <Route path='/categories' component={CategoryIndexContainer} onEnter={this._categories(store)}/>
+          <Route path='/categories' component={CategoryIndexContainer} onEnter={(this._categories(store))}/>
         </Route>
 
       </Router>

@@ -2,7 +2,7 @@ class Api::FeedsController < ApplicationController
 
   def index
     @feeds = Feed.all
-    sleep(2)
+
   end
 
   def show

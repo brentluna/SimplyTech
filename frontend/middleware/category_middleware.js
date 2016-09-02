@@ -7,7 +7,7 @@ const CategoryMiddleware = store => next => action => {
     case CategoryConstants.FETCH_ALL_CATEGORIES:
       const allSuccess = (categories) => {
         store.dispatch(receiveAllCategories(categories));
-        hashHistory.push('/categories');
+        // hashHistory.push('/categories');
       };
       fetchAllCategories(allSuccess);
       return next(action);

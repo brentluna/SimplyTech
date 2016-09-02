@@ -1,6 +1,7 @@
 import React from 'react';
 import Hamburger from 'react-icons/lib/fa/bars';
 import GetStarted from '../get_started/get_started';
+import {hashHistory} from 'react-router';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Sidebar extends React.Component {
     this.sideContent = this.sideContent.bind(this);
     this.footer = this.footer.bind(this);
     this.categoryButton = this.categoryButton.bind(this);
+    this.fetchCatagories = this.fetchCatagories.bind(this);
   }
 
   sideContent() {
@@ -33,10 +35,15 @@ class Sidebar extends React.Component {
     return footer;
   }
 
+  fetchCatagories () {
+    this.props.fetchAllCategories;
+    hashHistory.push('/categories');
+  }
+
   categoryButton () {
     if (this.props.loggedIn) {
       return(
-        <button onClick={this.props.fetchAllCategories} className='sidebar-category-button'>Categories</button>
+        <button onClick={this.fetchCatagories} className='sidebar-category-button'>Categories</button>
       );
     }
   }

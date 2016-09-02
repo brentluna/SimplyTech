@@ -20,7 +20,6 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    console.log("update");
     return e => {
       e.preventDefault();
       this.setState({[field]: e.currentTarget.value});
@@ -63,7 +62,7 @@ class SessionForm extends React.Component {
 
         if (demoEmail.length > 0) {
           this.setState({email: `${this.state.email}${demoEmail.shift()}`});
-          console.log(this.state);
+
         } else if (demoPassword.length > 0){
           this.setState({password: `${this.state.password}${demoPassword.shift()}`});
         } else {

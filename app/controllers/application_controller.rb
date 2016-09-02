@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :feedjira_entries
+  helper_method :current_user, :logged_in?, :feedjira_entries, :first_entry
 
 private
 
@@ -32,8 +32,8 @@ private
     render json: {base: ['invalid credentials']}, status: 401 if !current_user
   end
 
-  def feedjira_entries(source)
-    feed_obj = Feedjira::Feed.fetch_and_parse(source.url)
+  def feedjira_entries(feed)
+    feed_obj = Feedjira::Feed.fetch_and_parse(feed.url)
     parsed_feed_entries = []
     feed_obj.entries.each do |entry|
       parsed_feed_entries << {
@@ -43,12 +43,15 @@ private
         url: entry.url,
         author: entry.author,
         published: entry.published.to_s,
-        feed: source
+        feed: feed
       }
     end
     parsed_feed_entries
   end
 
+  def first_entry(feed)
+    feedjira_entries(feed).first
+  end
 
   def set_image(entry)
 

@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux';
 import SessionReducer from './session_reducer';
 import FeedReducer from './feed_reducer';
+import CategoryReducer from './category_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  feeds: FeedReducer
+  feeds: FeedReducer,
+  categories: CategoryReducer
 });
 
 

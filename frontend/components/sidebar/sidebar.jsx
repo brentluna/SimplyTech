@@ -7,6 +7,7 @@ class Sidebar extends React.Component {
     super(props);
     this.sideContent = this.sideContent.bind(this);
     this.footer = this.footer.bind(this);
+    this.categoryButton = this.categoryButton.bind(this);
   }
 
   sideContent() {
@@ -32,6 +33,14 @@ class Sidebar extends React.Component {
     return footer;
   }
 
+  categoryButton () {
+    if (this.props.loggedIn) {
+      return(
+        <button onClick={this.props.fetchAllCategories} className='sidebar-category-button'>Categories</button>
+      );
+    }
+  }
+
   render() {
 
     return (
@@ -41,6 +50,7 @@ class Sidebar extends React.Component {
         </div>
 
         {this.sideContent()}
+        {this.categoryButton()}
         <div className='spacer'></div>
         {this.footer()}
       </aside>

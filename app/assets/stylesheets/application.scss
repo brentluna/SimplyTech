@@ -75,14 +75,24 @@
  --purple-color: #966fd6 ;
  --background-color: #202426;
 }
+//
+// button:hover {
+//   opacity: .8;
+// }
+//
+// input[type=submit]:hover {
+//   opacity: .8;
+//
+// }
 
-button:hover {
-  opacity: .8;
+button, a, input[type="submit"] {
+ cursor: pointer;
+ transition: filter .3s, -webkit-filter .3s;
 }
 
-input[type=submit]:hover {
-  opacity: .8;
-
+button:hover, a:hover, input[type="submit"]:hover {
+ filter: brightness(85%);
+ -webkit-filter: brightness(85%);
 }
 
 

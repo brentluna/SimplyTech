@@ -27,7 +27,6 @@ class FeedsIndex extends React.Component {
 
   render() {
     let content = null;
-    console.log(this.props.feeds);
     if (Object.keys(this.props.feeds).length) {
       content = this.feedLis();
     } else {

@@ -21,3 +21,16 @@ Feed.create!([
 {title: "Digital Trends", url: "http://www.digitaltrends.com/feed/", description: "Digital Trends is your premier source for technology news and unbiased expert product reviews of HDTVs, laptops, smartphones and more.", logo: "http://cdn2.digitaltrends.com/dt-logo-200x200.png"},
 {title: "Gizmodo", url: "http://feeds.gawker.com/gizmodo/full", description: "We come from the future.", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Gizmodo_Logo.png"},
 {title: "Android Police", url: "http://www.androidpolice.com/feed/", description: "We come from the future.", logo: "https://www.getqardio.com/wp-content/uploads/2015/05/Android-Police-logo.png"}])
+
+
+Category.create!([
+  {title: 'General', image: 'http://kenstonlocal.org/kenston/wp-content/uploads/2014/07/technology1.jpg'},
+  {title: 'Android', image: 'http://davy.preuveneers.be/phoneme/public/icon/android.png'}
+  ])
+
+
+FeedCategory.create!([
+  {feed_id: Feed.find_by(title: "Gizmodo").id, category_id: Category.find_by(title: "General").id},
+  {feed_id: Feed.find_by(title: "Android Police").id, category_id: Category.find_by(title: "Android").id}
+
+  ])

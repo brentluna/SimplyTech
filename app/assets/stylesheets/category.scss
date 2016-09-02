@@ -1,0 +1,23 @@
+
+.category-item-container {
+  margin: 40px;
+
+}
+
+.category-item-title {
+  margin: auto;
+}
+.category-item-ul {
+  display: flex;
+}
+
+.category-item-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.category-item-img-container {
+  width: 400px;
+  height: 300px;
+}

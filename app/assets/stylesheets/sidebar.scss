@@ -17,7 +17,12 @@
   }
 }
 
-
+.sidebar-category-button {
+  margin: 10px auto;
+  color: #eee;
+  font-weight: 200;
+  display: none;
+}
 
 .sidebar:hover {
   width: 260px;
@@ -26,6 +31,10 @@
   // justify-content: space-between;
     .hamburger-icon {
       display: none;
+    }
+
+    .sidebar-category-button {
+      display: block;
     }
 
   .get-started-button {

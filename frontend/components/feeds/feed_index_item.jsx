@@ -2,8 +2,8 @@ import React from 'react';
 import ReaderModal from './reader_modal';
 
 
-const FeedIndexItem = ({image, title, summary, feed, url, published, author}) => (
-    <li className='feed-index-item group'>
+const FeedIndexItem = ({image, title, summary, feed, url, published, author, onClick}) => (
+    <li onClick={onClick} className='feed-index-item group'>
     <div className='img-div'>
       <img className='feed-index-item-image' src={image} />
     </div>
@@ -16,7 +16,7 @@ const FeedIndexItem = ({image, title, summary, feed, url, published, author}) =>
 
         </footer>
       </div>
-      <ReaderModal image={image} title={title} content={summary} url={url} published={published} author={author} feed={feed}/>
+      {/* <ReaderModal isOpen={} image={image} title={title} content={summary} url={url} published={published} author={author} feed={feed}/> */}
     </li>
 );
 

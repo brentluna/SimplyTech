@@ -4,17 +4,10 @@ import Modal from 'react-modal';
 
 
 const customStyles = {
-  // content : {
-  //   top                   : '50%',
-  //   left                  : '50%',
-  //   right                 : 'auto',
-  //   bottom                : 'auto',
-  //   marginRight           : '-50%',
-  //   transform             : 'translate(-50%, -50%)'
-  // }
+
   content: {
-    border: '1px solid black',
-    borderRadius: '4px',
+    borderLeft: '1px solid black',
+    borderRadius: '1px',
     bottom: '0',
     minHeight: '10rem',
     padding: '2rem',
@@ -62,7 +55,7 @@ class ReaderModal extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles} >
           <FeedIndexItemDetail title={this.props.title} image={this.props.image} content={this.props.content} url={this.props.url} author={this.props.author} published={this.props.published} feed={this.props.feed} />
-          {/* <button onClick={this.closeModal}>close</button> */}
+          <button onClick={this.closeModal}>X</button>
         </Modal>
       </div>
     );

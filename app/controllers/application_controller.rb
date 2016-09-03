@@ -53,6 +53,19 @@ private
     feedjira_entries(feed).first
   end
 
+  def ordered_entries(collection)
+    entries = []
+    collection.feeds.each do |feed|
+      entries << feedjira_entries(feed)
+    end
+    entries.sort! { |a, b| b[:published] <=> a[:published] }
+  end
+
+  def limited_ordered_entires(collection)
+    ordered_entries(collection)[0...10]
+  end
+  
+
   def set_image(entry)
 
     image = nil

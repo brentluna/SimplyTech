@@ -39,9 +39,7 @@ class FeedsIndex extends React.Component {
   }
 
   openModal(entry, feed) {
-    console.log('openMOdal');
     entry.feed = feed;
-    console.log(entry, feed);
     this.setState({modalOpen: true, currentEntry: entry});
   }
 
@@ -76,7 +74,6 @@ class FeedsIndex extends React.Component {
         </ul>
         <Modal
           isOpen={this.state.modalOpen}
-          // onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles} >
           <FeedIndexItemDetail entry={this.state.currentEntry} />

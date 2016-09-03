@@ -16,7 +16,6 @@ const FeedIndexItem = ({image, title, summary, feed, url, published, author, onC
 
         </footer>
       </div>
-      {/* <ReaderModal isOpen={} image={image} title={title} content={summary} url={url} published={published} author={author} feed={feed}/> */}
     </li>
 );
 

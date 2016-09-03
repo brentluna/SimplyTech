@@ -19,11 +19,11 @@ class Api::CollectionFeedsController < ApplicationController
     if @collection_feed.destroy
       render :show
     else
-      render json: {base: ['Unable to unsubscribe'], status 401}
+      render json: {base: ['Unable to unsubscribe'], status: 401}
     end
   end
 
-      
+
   private
 
   def collection_feed_params

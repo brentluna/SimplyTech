@@ -3,6 +3,7 @@ class Api::CollectionsController < ApplicationController
   def index
     if current_user
       @collections = current_user.collections
+    end
   end
 
   def show
@@ -37,7 +38,7 @@ class Api::CollectionsController < ApplicationController
     render :show
   end
 
-  private 
+  private
   def collection_params
     params.require(:collection).permit(:title)
   end

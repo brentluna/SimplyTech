@@ -2,6 +2,7 @@ import React from 'react';
 import Hamburger from 'react-icons/lib/fa/bars';
 import GetStarted from '../get_started/get_started';
 import {hashHistory} from 'react-router';
+import CollectionIndexContainer from '../collection/collection_index_container';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -18,6 +19,8 @@ class Sidebar extends React.Component {
     if (!this.props.loggedIn) {
       sideContent = <GetStarted text={buttonText}/>;
       return sideContent;
+    } else {
+      return <CollectionIndexContainer />
     }
 
   }

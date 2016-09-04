@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :feedjira_entries, :first_entry
+  helper_method :current_user, :logged_in?, :feedjira_entries, :first_entry, :limited_ordered_entries, :ordered_entries
 
 private
 
@@ -58,13 +58,14 @@ private
     collection.feeds.each do |feed|
       entries << feedjira_entries(feed)
     end
-    entries.sort! { |a, b| b[:published] <=> a[:published] }
+
+    entries.flatten.sort! { |a, b| b[:published] <=> a[:published] }
   end
 
-  def limited_ordered_entires(collection)
+  def limited_ordered_entries(collection)
     ordered_entries(collection)[0...10]
   end
-  
+
 
   def set_image(entry)
 

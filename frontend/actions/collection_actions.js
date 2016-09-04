@@ -3,7 +3,9 @@ export const CollectionConstants = {
   RECEIVE_SINGLE_COLLECTION: 'RECEIVE_SINGLE_COLLECTION',
   REMOVE_COLLECTION: 'REMOVE_COLLECTION',
   ADD_COLLECTION: 'ADD_COLLECTION',
-  UPDATE_COLLECTION: 'UPDATE_COLLECTION'
+  UPDATE_COLLECTION: 'UPDATE_COLLECTION',
+  FETCH_ALL_COLLECTIONS: 'FETCH_ALL_COLLECTIONS',
+  FETCH_SINGLE_COLLECTION: 'FETCH_SINGLE_COLLECTION'
 };
 
 
@@ -17,11 +19,25 @@ export const receiveSingleCollection = collection => ({
   collection
 });
 
-export const removeCollection = collection => ({
+export const removeCollection = id => ({
   type: CollectionConstants.REMOVE_COLLECTION,
-  collection
+  id
 });
 
 export const addCollection = () => ({
   type: CollectionConstants.ADD_COLLECTION
+});
+
+export const updateCollection = id => ({
+  type: CollectionConstants.UPDATE_COLLECTION,
+  id
+});
+
+export const fetchAllCollections = () => ({
+  type: CollectionConstants.FETCH_ALL_COLLECTIONS
+});
+
+export const fetchSingleCollection = id => ({
+  type: CollectionConstants.FETCH_SINGLE_COLLECTION,
+  id
 })

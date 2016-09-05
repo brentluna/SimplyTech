@@ -1,4 +1,6 @@
 import React from 'react';
+import CollectionAddFormContainer from '../collection/collection_add_form_container';
+
 
 class CategoryItemDetail extends React.Component {
   constructor(props) {
@@ -22,6 +24,7 @@ class CategoryItemDetail extends React.Component {
                 <img className='first-entry-img' src={feed.first_entry.image} />
               </div>
             </div>
+            <CollectionAddFormContainer feedId={feed.id} />
           </li>
         );
       });
@@ -44,16 +47,6 @@ class CategoryItemDetail extends React.Component {
   }
 
 }
-// const CategoryItemDetail = ({category}) => {
-//   return (
-//     <div className='category-detail-container'>
-//       <img src={category.image} />
-//       <h1>{category.title}</h1>
-//       <ul>
-//         {/* {mapFeeds(category.feeds)} */}
-//       </ul>
-//     </div>
-//   );
-// };
+
 
 export default CategoryItemDetail;

@@ -66,6 +66,7 @@ class AppRouter extends React.Component {
             <IndexRoute component={CategoryIndexContainer} onEnter={(this._categories(store))} />
             <Route path=':id' component={CategoryItemDetailContainer} onEnter={this._singleCategory(store)} />
           </Route>
+
         </Route>
 
       </Router>

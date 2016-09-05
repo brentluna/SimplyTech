@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :feeds, only: [:index, :show]
     resources :categories, only: [:show, :index]
     resources :collections
+    resources :collection_feeds, only: [:create, :destroy]
   end
 end

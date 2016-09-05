@@ -1,3 +1,38 @@
 // Place all the styles related to the api/Collections controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.add-collection-checkbox {
+  cursor: pointer;
+  margin-top: 10px;
+  -webkit-appearance: checkbox;
+
+}
+
+.collection-index-container {
+  display: none;
+  margin: 20px;
+}
+
+.sidebar:hover {
+
+  .collection-index-container {
+    display: block;
+  }
+}
+
+
+.collection-index-item-feed {
+  color: #eee;
+  font-weight: 100;
+  margin: 10px;
+
+}
+
+.collection-index-item-collection {
+  margin: 10px;
+}
+
+.collection-index-item-collection ul {
+
+}

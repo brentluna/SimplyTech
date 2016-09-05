@@ -27,6 +27,6 @@ class Api::CollectionFeedsController < ApplicationController
   private
 
   def collection_feed_params
-    params.require(:collection_feed).permitj(:feed_id, :collection_id)
+    params.require(:collection_feed).permit(:feed_id, :collection_id)
   end
 end

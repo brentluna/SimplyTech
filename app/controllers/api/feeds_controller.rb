@@ -1,8 +1,12 @@
 class Api::FeedsController < ApplicationController
 
   def index
+    #changed from Feed.all
+    @feeds = current_user.feeds
+  end
+
+  def all_feeds
     @feeds = Feed.all
-    sleep(2)
   end
 
   def show

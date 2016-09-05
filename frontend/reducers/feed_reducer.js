@@ -8,7 +8,12 @@ const defaultState = {
 const FeedReducer = (state = defaultState, action) => {
   switch (action.type) {
     case FeedConstants.RECEIVE_ALL_FEEDS:
-      return merge({},  action.feeds);
+      let newObj = {};
+      for (let idx in action.feeds) {
+        let feed = action.feeds[idx];
+        newObj[feed.id] = feed;
+      }
+      return merge({},  newObj);
 
     case FeedConstants.RECEIVE_SINGLE_FEED:
       debugger

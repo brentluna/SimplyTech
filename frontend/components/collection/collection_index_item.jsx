@@ -14,13 +14,19 @@ class CollectionIndexItem extends React.Component {
 
   mapItems() {
     let lis = []
+    const that = this;
 
     for (let idx in this.props.collections) {
       let collection = this.props.collections[idx];
       let subLis = [];
-      collection.feeds.forEach(feed => {
-        subLis.push(<li className='collection-index-item-feed' key={feed.title}>{feed.title}</li>)
-      });
+      if (Object.keys(that.props.feeds).length) {
+
+        collection.feeds.forEach(feedId => {
+          debugger
+          let feed = that.props.feeds[feedId];
+          subLis.push(<li className='collection-index-item-feed' key={feed.title}>{feed.title}</li>)
+        });
+      }
       lis.push(
         <li className='collection-index-item-collection' key={collection.title}>
           <Link to={`/collections/${collection.id}`}>{collection.title}</Link>

@@ -43,7 +43,7 @@ private
         url: entry.url,
         author: entry.author,
         published: entry.published.to_s,
-        feed: feed
+        feed: feed.id
       }
     end
     parsed_feed_entries

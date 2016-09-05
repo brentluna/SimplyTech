@@ -3,7 +3,8 @@ import CollectionIndexItem from './collection_index_item';
 import {fetchAllCollections} from '../../actions/collection_actions';
 
 const mapStateToProps = state => ({
-  collections: state.collections
+  collections: state.collections,
+  feeds: state.feeds
 });
 
 const mapDispatchToProps = dispatch =>({

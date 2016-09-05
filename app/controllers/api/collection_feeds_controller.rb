@@ -15,9 +15,12 @@ class Api::CollectionFeedsController < ApplicationController
   end
 
   def destroy
-    @collection_feed = CollectionFeed.find(params[:id])
+
+    @collection_feed = CollectionFeed.where(collection_id: params[:collection_feed][:collection_id]).where(feed_id: params[:collection_feed][:feed_id]).first
+    debugger
     if @collection_feed.destroy
       render :show
+      # render json: @collection_feed.collection 
     else
       render json: {base: ['Unable to unsubscribe'], status: 401}
     end

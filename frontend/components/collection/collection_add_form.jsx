@@ -21,8 +21,8 @@ const customStyles = {
 class CollectionAddForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {subscribe:[], unsubscribe:[]};
-    this.state =  {modalIsOpen: false};
+    this.state = {subscribe:[], unsubscribe:[], modalIsOpen: false};
+    // this.state =  {modalIsOpen: false};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.mapCollections = this.mapCollections.bind(this);
@@ -54,9 +54,9 @@ class CollectionAddForm extends React.Component {
 
   updateState(e) {
     if(e.target.checked) {
-      this.setState({subscribe: [...this.state.subscribe, {feeId: this.props.feedId, collectionId: e.value}]});
+      this.setState({subscribe: [...this.state.subscribe, {feed_id: this.props.feedId, collection_id: parseInt(e.target.value)}]});
     } else {
-      this.setState({unsubscribe: [...this.state.unsubscribe, {feeId: this.props.feedId, collectionId: e.value}]});
+      this.setState({unsubscribe: [...this.state.unsubscribe, {feed_id: this.props.feedId, collection_id: parseInt(e.target.value)}]});
     }
   }
 
@@ -65,7 +65,7 @@ class CollectionAddForm extends React.Component {
     for(let idx in this.props.collections) {
       let collection = this.props.collections[idx];
       collectionLis.push(
-        <li>
+        <li key={collection.id}>
           <label>
             <input
               className='add-collection-checkbox'
@@ -83,13 +83,21 @@ class CollectionAddForm extends React.Component {
   }
 
   handleSubmit(e) {
+    this.closeModal();
     e.preventDefault();
+    this.state.subscribe.forEach(subs => {
+      this.props.createCollectionFeed(subs.collection_id, subs.feed_id);
+    });
+
+    this.state.unsubscribe.forEach(subs => {
+      this.props.deleteCollectionFeed(subs.collection_id, subs.feed_id);
+    });
   }
 
   render() {
     return (
       <div open={this.openModal}>
-        <button className='reader-modal-button' onClick={this.openModal}>Add To Collection</button>
+        <button className='add-modal-button' onClick={this.openModal}>Add To Collection</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

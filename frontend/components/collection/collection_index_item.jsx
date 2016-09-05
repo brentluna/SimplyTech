@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactCollapsible from 'react-collapsible';
+import {Link} from 'react-router';
 
 class CollectionIndexItem extends React.Component {
   constructor(props) {
@@ -17,11 +19,11 @@ class CollectionIndexItem extends React.Component {
       let collection = this.props.collections[idx];
       let subLis = [];
       collection.feeds.forEach(feed => {
-        subLis.push(<li className='collection-index-item-feed'>{feed.title}</li>)
+        subLis.push(<li className='collection-index-item-feed' key={feed.title}>{feed.title}</li>)
       });
       lis.push(
-        <li className='collection-index-item-collection'>
-          {collection.title}
+        <li className='collection-index-item-collection' key={collection.title}>
+          <Link to={`/collections/${collection.id}`}>{collection.title}</Link>
           <ul>
             {subLis}
           </ul>

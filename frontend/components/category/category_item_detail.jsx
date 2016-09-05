@@ -13,7 +13,7 @@ class CategoryItemDetail extends React.Component {
     if (this.props.category.feeds) {
       this.props.category.feeds.forEach(feed => {
         lis.push(
-          <li className='category-detail-li'>
+          <li className='category-detail-li' key={feed.title}>
             <h2>{feed.title}</h2>
             <div className='category-feed-img-div'>
               <img className='category-feed-img' src={feed.logo} />

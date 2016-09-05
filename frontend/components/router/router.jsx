@@ -7,7 +7,7 @@ import CategoryItemDetailContainer from '../category/category_item_detail_contai
 import CategoryIndexContainer from '../category/category_index_container';
 import {fetchAllFeeds} from '../../actions/feed_actions';
 import { fetchAllCategories, fetchSingleCategory} from '../../actions/category_actions';
-
+import CollectionOfFeedsContainer from '../collection/collection_of_feeds_container';
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -66,7 +66,10 @@ class AppRouter extends React.Component {
             <IndexRoute component={CategoryIndexContainer} onEnter={(this._categories(store))} />
             <Route path=':id' component={CategoryItemDetailContainer} onEnter={this._singleCategory(store)} />
           </Route>
-
+          <Route path='/collections'>
+            <IndexRoute component={CollectionOfFeedsContainer}/>
+            <Route path=':collectionId' component={CollectionOfFeedsContainer} />
+          </Route>
         </Route>
 
       </Router>

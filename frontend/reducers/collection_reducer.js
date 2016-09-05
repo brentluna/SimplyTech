@@ -3,18 +3,26 @@ import {merge} from 'lodash';
 
 
 
-const defaultState = {}
+const defaultState = {};
 
 const CollectionReducer = (state = defaultState, action ) => {
   switch (action.type) {
     case CollectionConstants.RECEIVE_ALL_COLLECTIONS:
-      return merge({}, state, action.collections);
+      let newObj = {};
+      for (let idx in action.collections) {
+        let collection = action.collections[idx];
+        newObj[collection.id] = collection;
+      }
+      return merge({}, newObj);
 
     case CollectionConstants.RECEIVE_SINGLE_COLLECTION:
       return merge({}, action.collection);
+
+
+
     default:
       return state;
   }
-}
+};
 
 export default CollectionReducer;

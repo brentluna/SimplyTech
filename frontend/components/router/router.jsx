@@ -38,6 +38,24 @@ class AppRouter extends React.Component {
   //   };
   // }
 
+  _ensureLoggedIn(nextState, replace){
+    const currentUser = this.props.currentUser;
+    if (!currentUser) {
+      replace('/login');
+    }
+  }
+
+  // _ensureData(store) {
+  //   return (nextState, replace) => {
+  //     if (!Object.keys(store.getState().feeds).length) {
+  //       store.dispatch(fetchAllFeeds());
+  //     }
+  //     if (!Object.keys(store.getState().collections).length) {
+  //       store.dispatch(fetchAllCollections());
+  //     }
+  //   }
+  // }
+
   _ensureLoggedIn(store) {
     return (nextState, replace) => {
       if (!this.props.currentUser) {
@@ -77,15 +95,15 @@ class AppRouter extends React.Component {
 
     return(
       <Router history={hashHistory}>
-        <Route path='/' component={App} onEnter={this._ensureLoggedIn(store)}>
+        <Route path='/' component={App} >
           <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
 
-          <Route path='/feeds'>
+          <Route path='/feeds' onEnter={this._ensureLoggedIn(store)}>
             <IndexRoute component={FeedsIndexContainer} />
             <Route path=':feedId' component={FeedsIndexContainer}/>
           </Route>
 
-          <Route path='/categories' >
+          <Route path='/categories' onEnter={this._ensureLoggedIn(store)} >
             <IndexRoute component={CategoryIndexContainer} onEnter={(this._categories(store))} />
             <Route path=':id' component={CategoryItemDetailContainer} onEnter={this._singleCategory(store)} />
           </Route>

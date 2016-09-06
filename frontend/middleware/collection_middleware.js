@@ -15,6 +15,7 @@ const CollectionMiddleware = store => next => action => {
         return next(action);
 
 
+
     default:
       return next(action);
   }

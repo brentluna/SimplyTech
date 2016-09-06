@@ -97,3 +97,16 @@
   line-height: 0;
   font-size: 14px;
 }
+
+.collapsible-header-container {
+  display: flex;
+}
+
+.collapsible-button {
+  display: flex;
+  justify-content: center;
+}
+.collapsible-title {
+  margin: 0;
+
+}

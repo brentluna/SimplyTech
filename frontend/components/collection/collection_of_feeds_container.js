@@ -13,9 +13,13 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     collection = state.collections;
   }
+  console.log(collection);
   return ({
     // ownProps.params.collectionId
-    feeds: collection
+
+    feeds: collection,
+    feedObjs: state.feeds
+
   });
 };
 

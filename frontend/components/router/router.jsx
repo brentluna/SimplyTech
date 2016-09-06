@@ -8,6 +8,7 @@ import CategoryIndexContainer from '../category/category_index_container';
 import {fetchAllFeeds} from '../../actions/feed_actions';
 import { fetchAllCategories, fetchSingleCategory} from '../../actions/category_actions';
 import CollectionOfFeedsContainer from '../collection/collection_of_feeds_container';
+import {fetchAllCollections} from '../../actions/collection_actions';
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -32,9 +33,25 @@ class AppRouter extends React.Component {
       replace('/');
       } else {
         store.dispatch(fetchAllFeeds());
+        store.dispatch(fetchAllCollections());
       }
     };
   }
+
+  // _ensureLoggedIn(store) {
+  //   return (nextState, replace) => {
+  //     if (!this.props.currentUser) {
+  //     replace('/');
+  //     } else {
+  //       if (Object.keys(this.props.feeds) === 0) {
+  //         store.dispatch(fetchAllFeeds());
+  //       }
+  //       if (Object.keys(this.props.collections) === 0) {
+  //         store.dispatch(fetchAllCollections());
+  //       }
+  //     }
+  //   };
+  // }
 
   _categories(store) {
     return (nextState, replace) => {
@@ -59,7 +76,7 @@ class AppRouter extends React.Component {
 
     return(
       <Router history={hashHistory}>
-        <Route path='/' component={App}>
+        <Route path='/' component={App} onEnter={this._ensureLoggedIn(store)}>
           <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
           <Route path='/feeds' component={FeedsIndexContainer} onEnter={this._ensureLoggedIn(store)}/>
           <Route path='/categories' >

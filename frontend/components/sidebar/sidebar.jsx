@@ -3,6 +3,8 @@ import Hamburger from 'react-icons/lib/fa/bars';
 import GetStarted from '../get_started/get_started';
 import {hashHistory} from 'react-router';
 import CollectionIndexContainer from '../collection/collection_index_container';
+import CollectionCollapsible from '../collection/collection_collapsible';
+
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -20,7 +22,7 @@ class Sidebar extends React.Component {
       sideContent = <GetStarted text={buttonText}/>;
       return sideContent;
     } else {
-      return <CollectionIndexContainer />
+      return <CollectionIndexContainer />;
     }
 
   }

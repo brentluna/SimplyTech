@@ -14,10 +14,12 @@ class CategoryItemDetail extends React.Component {
       this.props.category.feeds.forEach(feed => {
         lis.push(
           <li className='category-detail-li' key={feed.title}>
-            <h2>{feed.title}</h2>
-            <div className='category-feed-img-div'>
+            <header>
+              <div className='category-feed-img-div'>
               <img className='category-feed-img' src={feed.logo} />
-            </div>
+              </div>
+              <h2>{feed.title}</h2>
+            </header>
             <div className='category-feed-first-entry'>
               <p> {feed.first_entry.title}</p>
               <div className='firs-entry-img-div'>

@@ -46,6 +46,7 @@ private
         feed: feed.id
       }
     end
+
     parsed_feed_entries
   end
 
@@ -63,7 +64,7 @@ private
   end
 
   def limited_ordered_entries(collection)
-    ordered_entries(collection)[0...10]
+    ordered_entries(collection)
   end
 
 

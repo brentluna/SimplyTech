@@ -32,12 +32,20 @@
   height: 120px;
 }
 
+.category-detail-li header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
 .category-detail-container {
-  margin: 0 auto;
+  margin: 100px auto;
 }
 .category-feed-img-div {
-  width: 200px;
-  height: 120px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 10px;
 
 }
 .category-detail-title {

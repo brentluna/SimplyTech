@@ -32,19 +32,44 @@ class FeedsIndex extends React.Component {
     this.parseSummary = this.parseSummary.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.feedTitle = this.feedTitle.bind(this);
   }
 
   parseSummary(summary) {
-    return summary ? summary.replace(/<(?:.|\n)*?>/gm, '').split(" ").slice(0, 35).join(" ") + "..." : "";
+    let result = summary ? summary.replace(/<(?:.|\n)*?>/gm, '').split(" ").slice(0, 35).join(" ") + "..." : "";
+    result = result.replace(/&nbsp;/g, ' ');
+    result = result.replace(/&#8217;/g, "'");
+    result = result.replace(/&#8216;/g, "'");
+    return result;
   }
 
   openModal(entry, feed) {
     entry.feed = feed;
+
     this.setState({modalOpen: true, currentEntry: entry});
   }
 
   closeModal() {
     this.setState({modalOpen: false});
+  }
+
+  feedTitle(feed, entry) {
+    let feedTitle;
+    console.log(feed);
+    console.log(entry);
+    if (this.props.feedObjs && Object.keys(this.props.feedObjs).length) {
+    //   let feedId;
+    //   if ((entry.feed) instanceof Object) {
+    //     feedId = entry.feed.id;
+    //   } else {
+    //     feedId = entry.feed;
+    //   }
+    //   feedTitle = this.props.feedObjs[feedId].title;
+    // } else {
+      // feedTitle = feed.title;
+        feedTitle = this.props.feedObjs[feed].title;
+    }
+    return feedTitle;
   }
 
   feedLis() {
@@ -53,7 +78,9 @@ class FeedsIndex extends React.Component {
       let feed = this.props.feeds[idx];
       for (let i = 0; i < feed.entries.length; i++) {
         let entry = feed.entries[i];
-        lis.push(<FeedIndexItem onClick={this.openModal.bind(this, entry, feed)} title={entry.title} summary={this.parseSummary(entry.summary)} url={entry.url} published={entry.published} image={entry.image} title={entry.title} author={entry.author} feed={feed.title} key={`${idx + i}${entry.url}`}/>);
+
+        let feedTitle = this.feedTitle(entry.feed, entry);
+        lis.push(<FeedIndexItem onClick={this.openModal.bind(this, entry, entry.feed)} title={entry.title} summary={this.parseSummary(entry.summary)} url={entry.url} published={entry.published} image={entry.image} title={entry.title} author={entry.author} feed={feedTitle} key={`${idx + i}${entry.url}`}/>);
       }
     }
     return lis;
@@ -64,7 +91,6 @@ class FeedsIndex extends React.Component {
     if (Object.keys(this.props.feeds).length) {
       content = this.feedLis();
     } else {
-      // debugger
       content = <Loading type='bars' color='#966fd6' style='width: 300px; height: 400px;' />;
     }
     return (

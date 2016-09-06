@@ -23,7 +23,10 @@ class CollectionCollapsible extends React.Component {
     if (that.props.feeds && Object.keys(that.props.feeds).length){
       this.props.collection.feeds.forEach(feedId => {
         let feed = that.props.feeds[feedId];
-        subLis.push(<li className='collection-index-item-feed'>{feed.title}</li>);
+        subLis.push(
+          <Link to={`/feeds/${feedId}`}>
+            <li className='collection-index-item-feed'>{feed.title}</li>
+          </Link>);
       });
     }
     if (this.state.visible) {
@@ -36,7 +39,7 @@ class CollectionCollapsible extends React.Component {
     let header = '';
     if (this.props.collection) {
       header = <Link to={`/collections/${this.props.collection.id}`}>
-        <h3>{this.props.collection.title}</h3>
+        <div>{this.props.collection.title}</div>
       </Link>
     }
     return header;

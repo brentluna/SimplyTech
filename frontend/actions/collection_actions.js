@@ -24,8 +24,9 @@ export const removeCollection = id => ({
   id
 });
 
-export const addCollection = () => ({
-  type: CollectionConstants.ADD_COLLECTION
+export const addCollection = (title) => ({
+  type: CollectionConstants.ADD_COLLECTION,
+  title
 });
 
 export const updateCollection = id => ({

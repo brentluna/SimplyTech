@@ -40,6 +40,7 @@ class FeedsIndex extends React.Component {
     result = result.replace(/&nbsp;/g, ' ');
     result = result.replace(/&#8217;/g, "'");
     result = result.replace(/&#8216;/g, "'");
+    result = result.replace(/&#038;/g, '&')
     return result;
   }
 
@@ -55,18 +56,8 @@ class FeedsIndex extends React.Component {
 
   feedTitle(feed, entry) {
     let feedTitle;
-    console.log(feed);
-    console.log(entry);
+
     if (this.props.feedObjs && Object.keys(this.props.feedObjs).length) {
-    //   let feedId;
-    //   if ((entry.feed) instanceof Object) {
-    //     feedId = entry.feed.id;
-    //   } else {
-    //     feedId = entry.feed;
-    //   }
-    //   feedTitle = this.props.feedObjs[feedId].title;
-    // } else {
-      // feedTitle = feed.title;
         feedTitle = this.props.feedObjs[feed].title;
     }
     return feedTitle;

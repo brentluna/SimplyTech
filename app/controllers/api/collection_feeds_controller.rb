@@ -4,7 +4,8 @@ class Api::CollectionFeedsController < ApplicationController
   def create
     @collection_feed = CollectionFeed.new(collection_feed_params)
     if @collection_feed.save
-      render :show
+      @collection = @collection_feed.collection
+      render 'api/collections/show'
     else
       render json: {base: ['Was unable to subscribe.'], status: 401}
     end

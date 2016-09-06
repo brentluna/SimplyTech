@@ -27,31 +27,32 @@ class AppRouter extends React.Component {
     }
   }
 
-  _ensureLoggedIn(store) {
-    return (nextState, replace) => {
-      if (!this.props.currentUser) {
-      replace('/');
-      } else {
-        store.dispatch(fetchAllFeeds());
-        store.dispatch(fetchAllCollections());
-      }
-    };
-  }
-
   // _ensureLoggedIn(store) {
   //   return (nextState, replace) => {
   //     if (!this.props.currentUser) {
   //     replace('/');
   //     } else {
-  //       if (Object.keys(this.props.feeds) === 0) {
-  //         store.dispatch(fetchAllFeeds());
-  //       }
-  //       if (Object.keys(this.props.collections) === 0) {
-  //         store.dispatch(fetchAllCollections());
-  //       }
+  //       store.dispatch(fetchAllFeeds());
+  //       store.dispatch(fetchAllCollections());
   //     }
   //   };
   // }
+
+  _ensureLoggedIn(store) {
+    return (nextState, replace) => {
+      if (!this.props.currentUser) {
+      replace('/');
+      } else {
+
+        if (!Object.keys(store.getState().feeds).length) {
+          store.dispatch(fetchAllFeeds());
+        }
+        if (!Object.keys(store.getState().collections).length) {
+          store.dispatch(fetchAllCollections());
+        }
+      }
+    };
+  }
 
   _categories(store) {
     return (nextState, replace) => {
@@ -78,11 +79,17 @@ class AppRouter extends React.Component {
       <Router history={hashHistory}>
         <Route path='/' component={App} onEnter={this._ensureLoggedIn(store)}>
           <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
-          <Route path='/feeds' component={FeedsIndexContainer} onEnter={this._ensureLoggedIn(store)}/>
+
+          <Route path='/feeds'>
+            <IndexRoute component={FeedsIndexContainer} />
+            <Route path=':feedId' component={FeedsIndexContainer}/>
+          </Route>
+
           <Route path='/categories' >
             <IndexRoute component={CategoryIndexContainer} onEnter={(this._categories(store))} />
             <Route path=':id' component={CategoryItemDetailContainer} onEnter={this._singleCategory(store)} />
           </Route>
+
           <Route path='/collections'>
             <IndexRoute component={CollectionOfFeedsContainer}/>
             <Route path=':collectionId' component={CollectionOfFeedsContainer} />

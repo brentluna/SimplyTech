@@ -1,11 +1,16 @@
 import React from 'react';
 
 const parseSummary = (summary) =>  {
-    return summary ? summary.replace(/<(?:.|\n)*?>/gm, '').split(" ").slice(0, 35).join(" ") + "..." : "";
+  let result = summary ? summary.replace(/<(?:.|\n)*?>/gm, '') : "";
+  result = result.replace(/&nbsp;/g, ' ');
+  result = result.replace(/&#8217;/g, "'");
+  result = result.replace(/&#8216;/g, "'");
+  result = result.replace(/&#038;/g, '&');
+  return result;
   }
 
 const FeedIndexItemDetail = ({entry: {title, image, summary, author, feed, published, url}}) => {
-  debugger
+
   return (
 
   <div className='reader-modal-container'>

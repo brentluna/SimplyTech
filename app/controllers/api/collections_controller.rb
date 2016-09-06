@@ -42,4 +42,4 @@ class Api::CollectionsController < ApplicationController
   def collection_params
     params.require(:collection).permit(:title)
   end
-end
+end 

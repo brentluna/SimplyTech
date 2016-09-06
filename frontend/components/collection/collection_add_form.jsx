@@ -21,7 +21,7 @@ const customStyles = {
 class CollectionAddForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {subscribe:[], unsubscribe:[], modalIsOpen: false};
+    this.state = {subscribe:[], unsubscribe:[], modalIsOpen: false, newVisible: false, newCollectionName: ''};
     // this.state =  {modalIsOpen: false};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -29,6 +29,10 @@ class CollectionAddForm extends React.Component {
     this.collectionHasFeed = this.collectionHasFeed.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateState = this.updateState.bind(this);
+    this.toggleVisible = this.toggleVisible.bind(this);
+    this.newCollection = this.newCollection.bind(this);
+    this.updateNewName = this.updateNewName.bind(this);
+    this.createNewCollection = this.createNewCollection.bind(this);
   }
 
 
@@ -82,6 +86,38 @@ class CollectionAddForm extends React.Component {
     return collectionLis;
   }
 
+  newCollection() {
+    if (this.state.newVisible) {
+      return (
+        <div>
+          <input type='text' onChange={this.updateNewName} placeholder='Collection Name'/>
+          <button onClick={this.createNewCollection}>Create</button>
+        </div>
+        );
+    }
+  }
+  createNewCollection(e) {
+    e.preventDefault();
+
+    debugger
+    if (this.state.newCollectionName.length) {
+      this.props.addCollection(this.state.newCollectionName);
+      this.setState({newCollectionName: '', newVisible: false});
+
+    }
+  }
+
+  updateNewName(e) {
+    e.preventDefault();
+    this.setState({newCollectionName: e.target.value});
+  }
+
+  toggleVisible(e) {
+    e.preventDefault();
+    let newState = !this.state.newVisible;
+    this.setState({newVisible: newState});
+  }
+
   handleSubmit(e) {
     this.closeModal();
     e.preventDefault();
@@ -92,6 +128,7 @@ class CollectionAddForm extends React.Component {
     this.state.unsubscribe.forEach(subs => {
       this.props.deleteCollectionFeed(subs.collection_id, subs.feed_id);
     });
+    this.props.fetchAllCollections();
   }
 
   render() {
@@ -108,6 +145,10 @@ class CollectionAddForm extends React.Component {
               <ul>
                 {this.mapCollections()}
               </ul>
+              <div>
+                <button onClick={this.toggleVisible}>+</button>
+                {this.newCollection()}
+              </div>
               <button>Update</button>
             </form>
           </div>

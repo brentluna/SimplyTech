@@ -36,12 +36,16 @@ export const deleteCollection = (id, success) => (
   })
 );
 
-export const addCollection = (collection, success) => (
+export const addCollection = (collection, success) => {
+  debugger
+  return (
   $.ajax({
     method: 'POST',
     url: 'api/collections',
-    data: collection,
+    data: {collection: collection},
     success,
     error: () => console.log('error in addCollection')
   })
+
 );
+};

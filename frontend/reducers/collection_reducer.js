@@ -16,7 +16,7 @@ const CollectionReducer = (state = defaultState, action ) => {
       return merge({}, newObj);
 
     case CollectionConstants.RECEIVE_SINGLE_COLLECTION:
-      return merge({}, action.collection);
+      return merge({}, state, {[action.collection.id]: action.collection});
 
 
 

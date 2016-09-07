@@ -12,7 +12,12 @@ const customStyles = {
       right                 : 'auto',
       bottom                : 'auto',
       marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
+      transform             : 'translate(-50%, -50%)',
+      background: '#966fd6',
+      padding: '40px',
+      minWidth: '300px',
+      minHeight:'300px'
+
   }
 
 };
@@ -33,6 +38,7 @@ class CollectionAddForm extends React.Component {
     this.newCollection = this.newCollection.bind(this);
     this.updateNewName = this.updateNewName.bind(this);
     this.createNewCollection = this.createNewCollection.bind(this);
+    this.newCollectionButton = this.newCollectionButton.bind(this);
   }
 
 
@@ -49,7 +55,7 @@ class CollectionAddForm extends React.Component {
   collectionHasFeed(collection) {
     let result = false;
     collection.feeds.forEach(feed => {
-      if(feed.id === this.props.feedId) {
+      if(feed === this.props.feedId) {
         result = true;
       }
     });
@@ -69,8 +75,8 @@ class CollectionAddForm extends React.Component {
     for(let idx in this.props.collections) {
       let collection = this.props.collections[idx];
       collectionLis.push(
-        <li key={collection.id}>
-          <label>
+        <li className='add-collection-checkbox-li' key={collection.id}>
+          <label className='add-collection-checkbox-label'>
             <input
               className='add-collection-checkbox'
               type='checkbox'
@@ -89,9 +95,9 @@ class CollectionAddForm extends React.Component {
   newCollection() {
     if (this.state.newVisible) {
       return (
-        <div>
-          <input type='text' onChange={this.updateNewName} placeholder='Collection Name'/>
-          <button onClick={this.createNewCollection}>Create</button>
+        <div className='new-collection-input-container'>
+          <input type='text' onChange={this.updateNewName} placeholder='Collection Name' className='new-collection-input'/>
+          <button className='create-collection-button' onClick={this.createNewCollection}>Create</button>
         </div>
         );
     }
@@ -131,6 +137,18 @@ class CollectionAddForm extends React.Component {
     this.props.fetchAllCollections();
   }
 
+  newCollectionButton() {
+    if (!this.state.newVisible) {
+      return (
+        <button className='new-collection-button' onClick={this.toggleVisible}><i className="material-icons">add_circle_outline</i></button>
+      );
+    } else {
+      return (
+        <button className='new-collection-button' onClick={this.toggleVisible}><i className="material-icons">remove_circle_outline</i></button>
+      );
+    }
+  }
+
   render() {
     return (
       <div open={this.openModal}>
@@ -142,17 +160,17 @@ class CollectionAddForm extends React.Component {
           style={customStyles} >
           <div>
             <form onSubmit={this.handleSubmit}>
-              <ul>
+              <ul className='add-collection-ul'>
                 {this.mapCollections()}
               </ul>
-              <div>
-                <button onClick={this.toggleVisible}>+</button>
+              <div className='new-collection-button-input-container'>
+                {this.newCollectionButton()}
                 {this.newCollection()}
               </div>
-              <button>Update</button>
+              <button className='add-collection-submit-button'>Update</button>
             </form>
           </div>
-          <button onClick={this.closeModal}>X</button>
+          <button className='add-collection-close-button' onClick={this.closeModal}><i className="material-icons">close</i></button>
         </Modal>
       </div>
     );

@@ -47,7 +47,7 @@ class CollectionIndexItem extends React.Component {
       let collection = this.props.collections[idx];
       let subLis = [];
       // if (Object.keys(that.props.feeds).length) {
-        lis.push(<CollectionCollapsibleContainer collection={collection}/>);
+        lis.push(<CollectionCollapsibleContainer key={collection.id} collection={collection}/>);
       // }
     }
     return lis;

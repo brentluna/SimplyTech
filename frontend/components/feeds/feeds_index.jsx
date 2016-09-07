@@ -98,7 +98,7 @@ class FeedsIndex extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles} >
           <FeedIndexItemDetail entry={this.state.currentEntry} />
-          <button onClick={this.closeModal}>X</button>
+          <button className='reader-close-button' onClick={this.closeModal}>X</button>
         </Modal>
       </main>
     );

@@ -92,3 +92,12 @@ object-fit: cover;
   justify-content: space-around;
   align-items: center;
 }
+
+.reader-close-button {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}

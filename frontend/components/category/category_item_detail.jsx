@@ -37,9 +37,9 @@ class CategoryItemDetail extends React.Component {
   render() {
     return (
       <div className='category-detail-container'>
-      <div className='category-img-div'>
+      {/* <div className='category-img-div'>
         <img className='category-img' src={this.props.category.image} />
-      </div>
+      </div> */}
         <h1 className='category-detail-title'>{this.props.category.title}</h1>
         <ul className='category-detail-ul'>
           {this.mapFeeds()}

@@ -17,7 +17,7 @@ class Splash extends React.Component {
         <h1 className='splash-header'>Welcome to SimplyTech</h1>
           <p className='splash-text'>Your one stop source for everything Tech</p>
         {button}
-        <div className='splash-image'></div>
+        <div className='splash-image'><img src='/assets/screenshot'/></div>
       </section>
       </main>
     );

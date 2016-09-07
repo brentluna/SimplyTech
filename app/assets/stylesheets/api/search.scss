@@ -1,0 +1,60 @@
+.search-container {
+
+}
+
+.search-div {
+  font-weight: 100;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 220px;
+  height: 30px;
+
+}
+
+.material-icons {
+
+}
+
+.search-ul {
+  position: absolute;
+  background: white;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  width: 220px;
+
+}
+
+.search-input {
+  padding: 4px;
+  width: 180px;
+  letter-spacing: 1.4px;
+  font-size: 16px;
+  position: absolute;
+}
+
+.search-li {
+
+}
+
+.search-title:hover {
+  opacity: 1;
+  background: #55c3f4;
+}
+
+.search-title {
+  font-weight: 100;
+  color: black;
+  padding: 10px;
+  opacity: .7;
+  font-size: 16px;
+}
+
+
+i.material-icons.search {
+  color: #ccc;
+  margin: 2px;
+  font-size: 30px;
+
+}

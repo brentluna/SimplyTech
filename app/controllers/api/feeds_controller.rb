@@ -15,7 +15,7 @@ class Api::FeedsController < ApplicationController
 
   def search
     if params[:query].present?
-      @feeds = Feed.where("title ~ ?", params[:query].capitalize)
+      @feeds = Feed.where("title ILIKE ?", "%#{params[:query]}%")
 
     else
       @feeds = Feed.none

@@ -9,6 +9,7 @@ class Search extends React.Component {
     this.state = {search: "", results: ''};
     this.renderResults = this.renderResults.bind(this);
     this.updateState = this.updateState.bind(this);
+    this.searchContent = this.searchContent.bind(this);
   }
 
 
@@ -16,19 +17,20 @@ class Search extends React.Component {
     e.preventDefault();
     console.log(e.target.value);
     this.setState({search: e.target.value}, () =>{
-      if (this.state.search.length) {
+
         feedSearch(this.state.search, this.renderResults);
-      }
+
     });
   }
 
   renderResults(feeds) {
+
     let results = [];
     feeds.forEach(feed => {
       results.push(
         <Link to={`/feeds/${feed.id}`}>
-          <li>
-            {feed.title}
+          <li className='search-li'>
+            <div className='search-title'>{feed.title}</div>
           </li>
         </Link>
       );
@@ -40,16 +42,24 @@ class Search extends React.Component {
     }
   }
 
+  searchContent() {
+    if (this.state.search.length) {
+      return this.state.results;
+    } else {
+      return '';
+    }
+  }
+
   render() {
 
     return(
       <div className='search-container'>
         <div className='search-div'>
-          <i className="material-icons md-24 md-light md-inactive">search</i>
+          <i className="material-icons search">search</i>
           <input onChange={this.updateState} className='search-input' type='text' placeholder="SEARCH"/>
         </div>
-        <ul>
-          {this.state.results}
+        <ul className='search-ul'>
+          {this.searchContent()}
         </ul>
       </div>
     );

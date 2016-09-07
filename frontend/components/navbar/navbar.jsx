@@ -13,7 +13,7 @@ class NavBar extends React.Component {
       <section className='navbar-group'>
         <nav className='navbar-nav'>
 
-          <Link to='/feeds'><h2>SimplyTech</h2></Link>
+          <Link to='/feeds'><h2 className='navbar-title'>simplyTech</h2></Link>
           <SearchContainer />
         </nav>
       </section>

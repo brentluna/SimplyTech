@@ -1,6 +1,6 @@
 .sidebar {
   display: flex;
-  background: var(--purple-color);
+  background: #7e5bbe;
   width: 60px;
   -webkit-transition: width .5s;
   -o-transition: width .5s;
@@ -104,7 +104,7 @@
 .collapsible-header-container {
   display: flex;
   align-items: center;
-  margin: 15px;
+  margin: 15px 0;
 }
 .collapsible-title:hover, .collapsible-button:hover, .collection-index-item-feed:hover {
     opacity: .5;

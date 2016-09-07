@@ -10,7 +10,9 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    boxShadow: "8px, 10px, 34px, rgba(0, 0, 0, .5)",
+    border: 'none'
   }
 };
 
@@ -48,7 +50,7 @@ class GetStarted extends React.Component {
           style={customStyles} >
 
           {/* <button onClick={this.closeModal}>close</button> */}
-          <div className='modal-text'>Please Login or Signup</div>
+          {/* <div className='modal-text'>Please Login or Signup</div> */}
           <SessionFormContainer closeModal={this.closeModal} />
         </Modal>
       </div>

@@ -70,10 +70,11 @@
  }
 
 
-
+$purple: #7e5bbe;
+$blue: #55c3f4;
  /*------------*/
  :root {
- --purple-color: #966fd6 ;
+ --purple-color: #7e5bbe ;
  --background-color: #202426;
 }
 //
@@ -118,12 +119,10 @@ button:hover, a:hover, input[type="submit"]:hover {
 .get-started-button {
   padding: 15px;
   margin: auto;
-  border: 1px solid black;
-  border-radius: 5px;
   min-width: 100.5px;
   max-height: 5px;
   white-space: nowrap;
-  background: var(--purple-color);
+  background: #55c3f4;
   color: white;
   text-align: center;
   line-height: 0;

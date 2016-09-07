@@ -33,9 +33,9 @@ Feed.create!([
 
 Category.create!([
   {title: 'General', image: 'http://kenstonlocal.org/kenston/wp-content/uploads/2014/07/technology1.jpg'},
-  {title: 'Android', image: 'http://davy.preuveneers.be/phoneme/public/icon/android.png'},
+  {title: 'Android', image: 'https://i.kinja-img.com/gawker-media/image/upload/s--HKE-He8v--/c_scale,fl_progressive,q_80,w_800/hw5uj62xo93duxzlqmf3.jpg'},
   {title: 'Apple', image: 'https://www.wired.com/wp-content/uploads/2016/03/apple-fbi-514451372.jpg'},
-  {title: 'Programming', image: 'https://pixabay.com/static/uploads/photo/2015/09/09/21/12/monitor-933392_960_720.jpg'},
+  {title: 'Programming', image: 'http://images.8tracks.com/cover/i/000/007/570/programming-8239.jpg?rect=356,0,2136,2136&q=98&fm=jpg&fit=max&w=1024&h=1024'},
   {title: 'Gaming', image: 'https://yt3.ggpht.com/2tDwwVVEuy0ja92htLiC-JZdfqUB1ogR--jjSph3Ybk068mSQkoOhG9YdvYvgDrWyjCIvi9JOubtFIyi=s900-nd-c-c0xffffffff-rj-k-no'}
   ])
 

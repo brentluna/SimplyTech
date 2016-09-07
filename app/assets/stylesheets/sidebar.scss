@@ -106,6 +106,9 @@
   align-items: center;
   margin: 15px;
 }
+.collapsible-title:hover, .collapsible-button:hover, .collection-index-item-feed:hover {
+    opacity: .5;
+}
 
 .collapsible-button {
   color: white;

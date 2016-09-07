@@ -45,7 +45,10 @@ class FeedsIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (!Object.keys(this.props.feeds).length) {
+    if (!Object.keys(this.props.state.collections).length) {
+      this.props.fetchAllCollections();
+    }
+    if (!Object.keys(this.props.state.feeds).length) {
       this.props.fetchAllFeeds();
     }
   }

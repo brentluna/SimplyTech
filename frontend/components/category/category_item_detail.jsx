@@ -22,7 +22,7 @@ class CategoryItemDetail extends React.Component {
             </header>
             <div className='category-feed-first-entry'>
               <p> {feed.first_entry.title}</p>
-              <div className='firs-entry-img-div'>
+              <div className='first-entry-img-div'>
                 <img className='first-entry-img' src={feed.first_entry.image} />
               </div>
             </div>

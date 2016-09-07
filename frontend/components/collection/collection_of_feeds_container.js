@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import FeedsIndex from '../feeds/feeds_index';
 import {fetchAllFeeds} from '../../actions/feed_actions';
+import {fetchAllCollections} from '../../actions/collection_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,18 +14,20 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     collection = state.collections;
   }
-  console.log(collection);
+
   return ({
     // ownProps.params.collectionId
 
     feeds: collection,
-    feedObjs: state.feeds
+    feedObjs: state.feeds,
+    state: state
 
   });
 };
 
 const mapDispatchToProps = dispatch => ({
-  // fetchAllFeeds: () => dispatch(fetchAllFeeds())
+  fetchAllFeeds: () => dispatch(fetchAllFeeds()),
+  fetchAllCollections: () => dispatch(fetchAllCollections())
 });
 
 

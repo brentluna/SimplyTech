@@ -22,7 +22,7 @@ class CategoryIndex extends React.Component {
   render() {
     return (
       <div>
-        <h1>Categories</h1>
+
         <ul className='category-item-ul'>
           {this.categoryLis()}
         </ul>

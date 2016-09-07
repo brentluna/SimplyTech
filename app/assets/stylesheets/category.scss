@@ -4,7 +4,16 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 10px 20px 20px 20px;
+  background: rgba(#966fd6, .5);
+  opacity: .5;
+  transition: .5s ease-in;
+  -webkit-transition: .5s ease-in;
 
+}
+
+.category-item-container:hover {
+  background: #966fd6;
+opacity: .9;
 }
 
 

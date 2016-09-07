@@ -45,7 +45,9 @@ class FeedsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllFeeds();
+    if (!Object.keys(this.props.feeds).length) {
+      this.props.fetchAllFeeds();
+    }
   }
 
   openModal(entry, feed) {

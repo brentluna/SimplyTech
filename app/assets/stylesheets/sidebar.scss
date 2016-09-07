@@ -22,6 +22,9 @@
   color: #eee;
   font-weight: 200;
   display: none;
+  border: 1px solid #eee;
+  border-radius: 1px;
+  padding: 5px 10px;
 }
 
 .sidebar:hover {
@@ -101,10 +104,13 @@
 .collapsible-header-container {
   display: flex;
   align-items: center;
+  margin: 15px;
 }
 
 .collapsible-button {
   color: white;
+  margin-right: 10px;
+  cursor: pointer;
 }
 .collapsible-title {
   margin: 0;

@@ -48,7 +48,7 @@ class Sidebar extends React.Component {
   categoryButton () {
     if (this.props.loggedIn) {
       return(
-        <button onClick={this.fetchCatagories} className='sidebar-category-button'>Categories</button>
+        <button onClick={this.fetchCatagories} className='sidebar-category-button'>Discover and Follow</button>
       );
     }
   }
@@ -62,8 +62,8 @@ class Sidebar extends React.Component {
         </div>
         <div className='spacer'></div>
         <div className='sidebar-content-container'>
-          {this.sideContent()}
           {this.categoryButton()}
+          {this.sideContent()}
         </div>
         <div className='spacer'></div>
         {this.footer()}

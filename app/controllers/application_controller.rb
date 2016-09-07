@@ -64,9 +64,16 @@ private
   end
 
   def limited_ordered_entries(collection)
-    ordered_entries(collection)
+    ordered_entries(collection)[0..20]
   end
 
+  def user_ordered_entries(feeds)
+    entries = []
+    feeds.each do |feed|
+      entries << feedjira_entries(feed)
+    end
+    entries.flatten.sort! { |a, b| b[:published] <=> a[:published] }[0..20]
+  end
 
   def set_image(entry)
 

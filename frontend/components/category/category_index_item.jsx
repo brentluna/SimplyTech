@@ -9,8 +9,10 @@ const CategoryIndexItem = ({title, image, id}) => {
       <li>
         <div className='category-item-img-container'>
           <img className='category-item-img' src={image} />
+          <div className='image-darker'></div>
           <h3 className='category-item-title'>{title}</h3>
         </div>
+
       </li>
     </Link>
     </div>

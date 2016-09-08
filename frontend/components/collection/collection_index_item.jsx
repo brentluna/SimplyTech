@@ -7,6 +7,7 @@ class CollectionIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.mapItems = this.mapItems.bind(this);
+    this.all = this.all.bind(this);
   }
 
   componentDidMount() {
@@ -54,9 +55,27 @@ class CollectionIndexItem extends React.Component {
 
   }
 
+  all() {
+    return (
+      <li>
+        <Link to={'/feeds'}>
+        <div className='collapsible-header-container'>
+          <div className='collapsible-button' >
+            <i className="material-icons">view_headline</i>
+          </div>
+          <div className='collapsible-title'>
+            All Articles
+          </div>
+        </div>
+        </Link>
+      </li>
+    );
+  }
+
   render() {
     return (
       <ul>
+        {this.all()}
         {this.mapItems()}
       </ul>
     );

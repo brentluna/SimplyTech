@@ -20,9 +20,16 @@ class CollectionCollapsible extends React.Component {
     if (that.props.feeds && Object.keys(that.props.feeds).length){
       this.props.collection.feeds.forEach(feedId => {
         let feed = that.props.feeds[feedId];
+
         subLis.push(
-          <Link to={`/feeds/${feedId}`} key={`${this.props.collection.id}${feed}`}>
-            <li className='collection-index-item-feed'>{feed.title}</li>
+          <Link to={`/feeds/${feedId}`} key={`${this.props.collection.id}${feedId}`}>
+
+            <li className='collection-index-item-feed'>
+              <div className='collapsible-img-div'>
+                <img src={feed.image} className='collapsible-img' />
+              </div>
+              {feed.title}
+            </li>
           </Link>);
       });
     }

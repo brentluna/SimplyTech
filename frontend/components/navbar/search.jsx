@@ -15,7 +15,6 @@ class Search extends React.Component {
 
   updateState(e) {
     e.preventDefault();
-    console.log(e.target.value);
     this.setState({search: e.target.value}, () =>{
 
         feedSearch(this.state.search, this.renderResults);

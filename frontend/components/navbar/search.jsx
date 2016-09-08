@@ -10,6 +10,8 @@ class Search extends React.Component {
     this.renderResults = this.renderResults.bind(this);
     this.updateState = this.updateState.bind(this);
     this.searchContent = this.searchContent.bind(this);
+    this.loseFocus = this.loseFocus.bind(this);
+    this.backOnFocus = this.backOnFocus.bind(this);
   }
 
 
@@ -49,13 +51,22 @@ class Search extends React.Component {
     }
   }
 
+  loseFocus() {
+    this.setState({search: ''});
+    this.state = '';
+  }
+
+  backOnFocus() {
+    this.setState({search: this.value});
+  }
+
   render() {
 
     return(
       <div className='search-container'>
         <div className='search-div'>
           <i className="material-icons search">search</i>
-          <input onChange={this.updateState} className='search-input' type='text' placeholder="SEARCH"/>
+          <input onChange={this.updateState} className='search-input' type='text' placeholder="SEARCH" onBlur={this.loseFocus} />
         </div>
         <ul className='search-ul'>
           {this.searchContent()}

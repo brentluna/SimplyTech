@@ -6,7 +6,13 @@ import GitHub from 'react-icons/lib/fa/github';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.search = this.search.bind(this);
+  }
 
+  search() {
+    if (this.props.currentUser) {
+      return <SearchContainer />;
+    }
   }
 
   render() {
@@ -16,7 +22,7 @@ class NavBar extends React.Component {
 
           <Link to='/feeds'><h2 className='navbar-title'>simply<span>T</span>ech</h2></Link>
           <div className='navbar-container-right'>
-            <SearchContainer />
+            {this.search()}
             <a className='github-icon' target='_blank' href='https://github.com/brentluna/SimplyTech'>
               <GitHub />
             </a>

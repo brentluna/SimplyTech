@@ -1,6 +1,6 @@
 import React from 'react';
 import CollectionAddFormContainer from '../collection/collection_add_form_container';
-
+import Loading from 'react-loading';
 
 class CategoryItemDetail extends React.Component {
   constructor(props) {
@@ -31,6 +31,8 @@ class CategoryItemDetail extends React.Component {
         );
       });
       return lis;
+    } else {
+      return <Loading className='loading-bars' type='bars' color='#7e5bbe' style='width: 300px; height: 400px;' />;
     }
   }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import CategoryIndexItem from './category_index_item';
-
+import Loading from 'react-loading';
 
 class CategoryIndex extends React.Component {
   constructor(props) {
@@ -16,6 +16,8 @@ class CategoryIndex extends React.Component {
         lis.push(<CategoryIndexItem title={category.title} image={category.image} id={category.id} key={category.title} />);
       });
       return lis;
+    } else {
+      return <Loading className='loading-bars' type='bars' color='#7e5bbe' style='width: 300px; height: 400px;' />
     }
   }
 

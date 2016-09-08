@@ -103,7 +103,7 @@ class FeedsIndex extends React.Component {
     if (Object.keys(this.props.feeds).length) {
       content = this.feedLis();
     } else {
-      content = <Loading className='loading-bars' type='bars' color='#966fd6' style='width: 300px; height: 400px;' />;
+      content = <Loading className='loading-bars' type='bars' color='#7e5bbe' style='width: 300px; height: 400px;' />;
     }
     return (
       <main className='feeds-index-container'>

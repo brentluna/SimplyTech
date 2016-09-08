@@ -141,3 +141,26 @@ text-transform: uppercase;
   margin-right: 10px;
   font-size: 20px;
 }
+
+.category-item-ul svg {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.category-detail-container svg {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

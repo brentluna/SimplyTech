@@ -12,12 +12,15 @@ const customStyles = {
     minHeight: '10rem',
     padding: '2rem',
     position: 'fixed',
-    right: '0',
+    right: '-100%',
     top: '0',
     minWidth: '20rem',
     width: '80%',
     maxWidth: '60rem',
-    left: 'auto'
+    left: '100%',
+    transition: '.7s',
+    zIndex: '2'
+
   }
 
 };
@@ -32,6 +35,7 @@ class FeedsIndex extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.feedTitle = this.feedTitle.bind(this);
+    this.onModalOpen = this.onModalOpen.bind(this);
   }
 
   parseSummary(summary) {
@@ -59,7 +63,15 @@ class FeedsIndex extends React.Component {
     this.setState({modalOpen: true, currentEntry: entry});
   }
 
+  onModalOpen() {
+
+    customStyles.content.left = 'auto';
+    customStyles.content.right = '0';
+  }
+
   closeModal() {
+    customStyles.content.left = '100%';
+    customStyles.content.right = '-100%';
     this.setState({modalOpen: false});
   }
 
@@ -101,6 +113,7 @@ class FeedsIndex extends React.Component {
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
+          onAfterOpen={this.onModalOpen}
           style={customStyles} >
           <FeedIndexItemDetail entry={this.state.currentEntry} />
           <button className='reader-close-button' onClick={this.closeModal}>X</button>

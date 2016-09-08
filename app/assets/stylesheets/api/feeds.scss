@@ -13,11 +13,13 @@
   padding: 10px;
   margin-bottom: 150px;
   cursor: pointer;
-  transition: 1s;
-  -webkit-transition: 1s;
+  transition: .3s;
+  -webkit-transition: .3s;
 }
 .feed-index-item:hover {
-  background: rgba(0, 0, 0, .05);
+  background: rgba(0, 0, 0, .03);
+  border-left: 7px solid #55c3f4;
+
 }
 
 .feed-index-item-title {

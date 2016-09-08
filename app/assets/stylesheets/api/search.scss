@@ -40,7 +40,7 @@
 
 .search-title:hover {
   opacity: 1;
-  background: #55c3f4;
+  border-left: 5px solid #55c3f4;
 }
 
 .search-title {
@@ -49,6 +49,8 @@
   padding: 10px;
   opacity: .7;
   font-size: 16px;
+  transition: .3s;
+  -webkit-transition: .3s;
 }
 
 

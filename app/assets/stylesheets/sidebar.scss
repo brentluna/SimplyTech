@@ -106,7 +106,8 @@
   margin: 15px 0;
 }
 .collapsible-title:hover, .collapsible-button:hover, .collection-index-item-feed:hover {
-    opacity: .5;
+
+    color: #55c3f4;
 }
 
 .collapsible-button {
@@ -125,4 +126,5 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 180px;
 }

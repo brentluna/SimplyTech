@@ -19,9 +19,8 @@
 .search-ul {
   position: absolute;
   background: white;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  box-shadow: 2px 5px 7px rgba(0, 0, 0, .5);
+
   width: 220px;
   z-index: 1;
 

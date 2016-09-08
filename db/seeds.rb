@@ -27,7 +27,11 @@ Feed.create!([
 {title: "Kotaku", url: "http://feeds.gawker.com/kotaku/vip", description: "The Gamer's Guide", logo: "https://pbs.twimg.com/profile_images/590507751819841536/m8cKEBI0.jpg"},
 {title: "CSS-Tricks", url: "http://feeds.feedburner.com/CssTricks", description: "Tips, Tricks, and Techniques on using Cascading Style Sheets.", logo: "http://www.infragistics.com/community/cfs-filesystemfile.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/brent_5F00_schooley.metablogapi/8765.css_2D00_tricks_5F00_03149516.png"},
 {title: "Coding Horror", url: "http://feeds.feedburner.com/codinghorror", description: "programming and human factors", logo: "http://devstickers.com/assets/img/cat/coding-horror.png"},
-{title: "Joel on Software", url: "http://www.joelonsoftware.com/rss.xml", description: "A weblog by Joel Spolsky, a programmer working in New York City, about software and software companies.", logo: "https://learningcentergauss.edublogs.org/files/2016/04/logo-joel-on-Software-1q72tgd.png"}
+{title: "Joel on Software", url: "http://www.joelonsoftware.com/rss.xml", description: "A weblog by Joel Spolsky, a programmer working in New York City, about software and software companies.", logo: "https://learningcentergauss.edublogs.org/files/2016/04/logo-joel-on-Software-1q72tgd.png"},
+{title: "ZDNet", url: "http://www.zdnet.com/rssfeeds/", description: "ZDNet's breaking news, analysis, and research keeps business technology professionals in touch with the latest IT trends, issues and events.", logo: "https://pbs.twimg.com/profile_images/706961982545473536/Ibj46-DX.jpg"},
+{title: "How-To Geek", url: "http://feeds.howtogeek.com/HowToGeek/", description: "Includes help, tutorials, tips and how-to guides for Windows and Linux.", logo: "https://pbs.twimg.com/profile_images/715229294/geek-204x204_400x400.png"},
+{title: "Gamasutra", url: "http://feeds.feedburner.com/GamasutraFeatureArticles/", description: "The online free version of Game Developer Magazine. Weekly articles on game design and threads for discussion.", logo: "http://deepfreeze.it/img/j_logos/logo_gamasutra.png"},
+{title: "David Walsh Blog", url: "https://davidwalsh.name/feed", description: "A blog featuring tutorials about JavaScript, HTML5, AJAX, PHP, CSS, WordPress, and everything else development.", logo: "https://davidwalsh.name/wp-content/themes/punky/images/logo.png"},
 ])
 
 

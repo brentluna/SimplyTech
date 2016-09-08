@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import SearchContainer from './search_container';
+import GitHub from 'react-icons/lib/fa/github';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -14,7 +15,12 @@ class NavBar extends React.Component {
         <nav className='navbar-nav'>
 
           <Link to='/feeds'><h2 className='navbar-title'>simply<span>T</span>ech</h2></Link>
-          <SearchContainer />
+          <div className='navbar-container-right'>
+            <SearchContainer />
+            <a className='github-icon' target='_blank' href='https://github.com/brentluna/SimplyTech'>
+              <GitHub />
+            </a>
+          </div>
         </nav>
       </section>
     );

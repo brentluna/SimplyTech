@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 const customStyles = {
 
   content: {
-    border: '1px solid black',
+    boxShadow: "8px 10px 34px rgba(0, 0, 0, .5)",
     top                   : '50%',
       left                  : '50%',
       right                 : 'auto',

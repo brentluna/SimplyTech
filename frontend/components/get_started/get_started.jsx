@@ -11,7 +11,7 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    boxShadow: "8px, 10px, 34px, rgba(0, 0, 0, .5)",
+    boxShadow: "8px 10px 34px rgba(0, 0, 0, .5)",
     border: 'none'
   }
 };
@@ -23,7 +23,6 @@ class GetStarted extends React.Component {
     this.state =  {modalIsOpen: false};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
   }
 
 
@@ -35,9 +34,6 @@ class GetStarted extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
-  afterOpenModal() {
-    this.refs.subtitle.style.color = '#f00';
-  }
 
   render() {
     return (

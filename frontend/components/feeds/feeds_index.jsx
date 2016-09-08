@@ -7,8 +7,7 @@ import Modal from 'react-modal';
 const customStyles = {
 
   content: {
-    borderLeft: '1px solid black',
-    borderRadius: '1px',
+    boxShadow: "8px 10px 34px rgba(0, 0, 0, .5)",
     bottom: '0',
     minHeight: '10rem',
     padding: '2rem',
@@ -48,9 +47,10 @@ class FeedsIndex extends React.Component {
     if (!Object.keys(this.props.state.collections).length) {
       this.props.fetchAllCollections();
     }
-    if (!Object.keys(this.props.state.feeds).length) {
-      this.props.fetchAllFeeds();
-    }
+    // if (!Object.keys(this.props.state.feeds).length) {
+    //   console.log('fetchAll from inside feedsIndex CDM');
+    //   this.props.fetchAllFeeds();
+    // }
   }
 
   openModal(entry, feed) {

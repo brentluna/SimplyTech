@@ -11,10 +11,7 @@ class CollectionCollapsible extends React.Component {
     this.expandButton = this.expandButton.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchAllCollections();
-  //   this.props.fetchAllFeeds();
-  // }
+
 
   liContent() {
     let subLis = []

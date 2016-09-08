@@ -63,6 +63,7 @@ class AppRouter extends React.Component {
       } else {
 
         if (!Object.keys(store.getState().feeds).length) {
+          console.log('fetchAllFeeds from _ensureLoggedIn');
           store.dispatch(fetchAllFeeds());
         }
         if (!Object.keys(store.getState().collections).length) {

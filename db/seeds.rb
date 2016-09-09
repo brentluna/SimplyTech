@@ -96,3 +96,46 @@ CollectionFeed.create!([
   {collection_id: Collection.find_by(title: 'Gaming').id, feed_id: Feed.find_by(title: 'Gamasutra').id},
   {collection_id: Collection.find_by(title: 'Gaming').id, feed_id: Feed.find_by(title: 'IndieGames').id}
   ])
+
+  Favorite.create!([
+    {
+      user_id: User.find_by(email: 'user@demo.com').id,
+      author: "Andrew Liszewski",
+      title: "The Best Way To Charge Your iPhone 7 and Use Wired Headphones Is a Giant $40 Dongle",
+      feed: 'Gizmodo',
+      image: "https://i.kinja-img.com/gawker-media/image/upload/s--HHPHCzpT--/c_fit,fl_progressive,q_80,w_636/wrpnzhqe2upnpgblu1xt.jpg",
+      published:  "2016-09-08 21:00:00 UTC",
+      summary:  "Upgrading to the iPhone 7 and lack wireless headphones? Say hello to your new reality. Belkin appears to be the first accessory maker with a Lightning dongle that lets you attach a pair of Lightning connector headphones and a charging cable at the same time. Sigh.",
+      url:  "http://gizmodo.com/the-best-way-to-charge-your-iphone-7-and-use-wired-head-1786401737"
+    },
+    {
+      user_id: User.find_by(email: 'user@demo.com').id,
+      author: 'David Walsh',
+      title: "Get Query String Parameters with JavaScript",
+      feed: "David Walsh Blog",
+      image: "https://davidwalsh.name/wp-content/themes/punky/images/sda/ba-vlny16-pc20dwalsh-20160705.jpg",
+      published: "2016-08-29 13:24:42 UTC",
+      summary:  "<p>One of the front-end features that server side languages don&#8217;t have is the ability to natively get query string parameters by key.  The only method you have to access the query string is via the window.location.search property but you don&#8217;t get each property within one object, you get one string that represents the entire query string: console.log(window.location.search)",
+      url:  "https://davidwalsh.name/query-string-javascript"
+    },
+    {
+      user_id: User.find_by(email: 'user@demo.com').id,
+      author: 'Richard Gao',
+      title: "Google finally makes the Nexus 6P 7.0 Nougat factory and OTA images available",
+      feed: 'Android Police',
+      image: "http://www.androidpolice.com/wp-content/uploads/2016/09/nexus2cee_ap_resize-1-728x485.jpg",
+      published: "2016-09-08 23:52:23 UTC",
+      summary: "The title says it all, really&#8212;the Nexus 6P finally has a downloadable factory image and OTA, courtesy of Google. This news comes shortly after Vodafone announced that it was halting the Nougat OTA for the 6P due to unnamed issues. Earlier this month, when the September security update came out for Nexus devices, we were both puzzled and disappointed when only the Marshmallow Nexus 6P build received the security update, but both the image and OTA are finally here.",
+      url:"http://www.androidpolice.com/2016/09/08/google-finally-makes-nexus-6p-7-0-nougat-factory-ota-images-available/"
+    },
+    {
+      user_id: User.find_by(email: 'user@demo.com').id,
+      author: 'Liz Stinson',
+      title: "Here’s What You Need to Know About Ceramic, The Fancy Material in Apple’s Fanciest Watch",
+      feed: 'Wired',
+      image: "https://www.wired.com/wp-content/uploads/2016/09/CeramicAppleWatch-599948260-660x440.jpg",
+      published: "2016-09-08 21:04:10 UTC",
+      summary: "Here&#8217;s What You Need to Know About Ceramic, The Fancy Material in Apple’s Fanciest Watch Apple's shiny-white ceramic wearable is twice the price of the stainless steel model. So what does that extra dough buy you, besides a clean look?.",
+      url: "https://www.wired.com/2016/09/apples-new-high-end-watch-crazy-tough-ceramics-baby/"
+    }
+    ])

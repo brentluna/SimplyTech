@@ -29,8 +29,8 @@ class Search extends React.Component {
     let results = [];
     feeds.forEach(feed => {
       results.push(
-        <Link to={`/feeds/${feed.id}`} onClick={this.loseFocus}>
-          <li className='search-li'>
+        <Link to={`/feeds/${feed.id}`} onClick={this.loseFocus} key={feed.title}>
+          <li className='search-li' >
             <div className='search-title'>{feed.title}</div>
           </li>
         </Link>

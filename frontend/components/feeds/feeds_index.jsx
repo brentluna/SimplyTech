@@ -118,7 +118,7 @@ class FeedsIndex extends React.Component {
 
   render() {
     let content = null;
-    if (Object.keys(this.props.feeds).length || this.props.favs) {
+    if (Object.keys(this.props.feeds).length) {
       content = this.feedLis();
     } else {
       content = <Loading className='loading-bars' type='bars' color='#7e5bbe' style='width: 300px; height: 400px;' />;

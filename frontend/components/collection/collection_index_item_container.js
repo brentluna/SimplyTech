@@ -5,7 +5,9 @@ import {fetchAllCollections} from '../../actions/collection_actions';
 const mapStateToProps = state => ({
   collections: state.collections,
   feeds: state.feeds,
-  favs: false
+  favs: false,
+  favorites: state.favorites
+
 });
 
 const mapDispatchToProps = dispatch =>({

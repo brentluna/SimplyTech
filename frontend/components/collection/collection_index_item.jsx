@@ -48,20 +48,23 @@ class CollectionIndexItem extends React.Component {
     );
   }
   favorites() {
-    return (
-      <li>
-        <Link to={'/favorites'}>
-        <div className='collapsible-header-container'>
-          <div className='collapsible-button' >
-            <i className="material-icons">bookmark_border</i>
+    if (Object.keys(this.props.favorites).length) {
+
+      return (
+        <li>
+          <Link to={'/favorites'}>
+          <div className='collapsible-header-container'>
+            <div className='collapsible-button' >
+              <i className="material-icons">bookmark_border</i>
+            </div>
+            <div className='collapsible-title'>
+              Saved Articles
+            </div>
           </div>
-          <div className='collapsible-title'>
-            Saved Articles
-          </div>
-        </div>
-        </Link>
-      </li>
-    );
+          </Link>
+        </li>
+      );
+    }
   }
 
   render() {

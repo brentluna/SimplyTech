@@ -25,7 +25,16 @@
 .feed-index-item-title {
 
 }
+.bookmark-container {
+  display: flex;
+}
+.bookmark-container i {
+  margin-left: 10px;
+}
 
+.bookmark-container i:hover {
+  color: #55c3f4;
+}
 .feed-index-item-summary {
   width: 40%;
   display: inline;

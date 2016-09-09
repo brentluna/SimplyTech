@@ -29,8 +29,10 @@ const FeedIndexItem = ({image, title, summary, feed, url, published, author, onC
         <p className='feed-index-item-summary'>{summary}</p>
         <footer>
           <p>{feed}</p>
+          <div className='bookmark-container'>
           <p>{published}</p>
             <i onClick={favorite(image, title, summary, feed, url, published, author, id, addFavorite, removeFavorite, inFavs)} className="material-icons">bookmark_border</i>
+          </div>
         </footer>
       </div>
     </li>

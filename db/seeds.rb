@@ -9,9 +9,6 @@
 
 User.create(email: 'user@demo.com', password: 'password')
 
-#
-# Feed.create(title: 'Gizmodo', url: 'http://feeds.gawker.com/gizmodo/full', description: 'General tech blog with a focus on gadgets', logo: 'http://agent31.net/wp-content/uploads/2011/02/gizmodo.png');
-# Feed.create(title: 'Android Police', url: 'http://www.androidpolice.com/feed/', description: 'Android covereage at it\'s finest', logo: 'https://www.getqardio.com/wp-content/uploads/2015/05/Android-Police-logo.png');
 
 Feed.create!([
 {title: "IndieGames", url: "http://www.indiegames.com/blog/atom.xml", description: "The latest independent games news, interviews, and features, from the makers of Gamasutra.", logo: "http://i.cdn.turner.com/adultswim/big/img/2016/04/18/indiegames_logo.jpg"},
@@ -28,10 +25,9 @@ Feed.create!([
 {title: "CSS-Tricks", url: "http://feeds.feedburner.com/CssTricks", description: "Tips, Tricks, and Techniques on using Cascading Style Sheets.", logo: "http://www.infragistics.com/community/cfs-filesystemfile.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/brent_5F00_schooley.metablogapi/8765.css_2D00_tricks_5F00_03149516.png"},
 {title: "Coding Horror", url: "http://feeds.feedburner.com/codinghorror", description: "programming and human factors", logo: "http://devstickers.com/assets/img/cat/coding-horror.png"},
 {title: "Joel on Software", url: "http://www.joelonsoftware.com/rss.xml", description: "A weblog by Joel Spolsky, a programmer working in New York City, about software and software companies.", logo: "https://learningcentergauss.edublogs.org/files/2016/04/logo-joel-on-Software-1q72tgd.png"},
-# {title: "ZDNet", url: "http://www.zdnet.com/rssfeeds/", description: "ZDNet's breaking news, analysis, and research keeps business technology professionals in touch with the latest IT trends, issues and events.", logo: "https://pbs.twimg.com/profile_images/706961982545473536/Ibj46-DX.jpg"},
 {title: "How-To Geek", url: "http://feeds.howtogeek.com/HowToGeek/", description: "Includes help, tutorials, tips and how-to guides for Windows and Linux.", logo: "https://pbs.twimg.com/profile_images/715229294/geek-204x204_400x400.png"},
 {title: "Gamasutra", url: "http://feeds.feedburner.com/GamasutraFeatureArticles/", description: "The online free version of Game Developer Magazine. Weekly articles on game design and threads for discussion.", logo: "http://deepfreeze.it/img/j_logos/logo_gamasutra.png"},
-{title: "David Walsh Blog", url: "https://davidwalsh.name/feed", description: "A blog featuring tutorials about JavaScript, HTML5, AJAX, PHP, CSS, WordPress, and everything else development.", logo: "https://davidwalsh.name/wp-content/themes/punky/images/logo.png"}
+{title: "David Walsh Blog", url: "https://davidwalsh.name/feed", description: "A blog featuring tutorials about JavaScript, HTML5, AJAX, PHP, CSS, WordPress, and everything else development.", logo: "https://davidwalsh.name/wp-content/themes/punky/images/logo.png" }
 ])
 
 
@@ -47,8 +43,6 @@ Category.create!([
 
 FeedCategory.create!([
   {feed_id: Feed.find_by(title: "Gizmodo").id, category_id: Category.find_by(title: "General").id},
-  # {feed_id: Feed.find_by(title: "ZDNet").id, category_id: Category.find_by(title: "General").id},
-  # {feed_id: Feed.find_by(title: "ZDNet").id, category_id: Category.find_by(title: "Gadgets").id},
   {feed_id: Feed.find_by(title: "Gizmodo").id, category_id: Category.find_by(title: "Gadgets").id},
   {feed_id: Feed.find_by(title: "Wired").id, category_id: Category.find_by(title: "General").id},
   {feed_id: Feed.find_by(title: "TechCrunch").id, category_id: Category.find_by(title: "General").id},
@@ -84,11 +78,9 @@ Collection.create!([
 CollectionFeed.create!([
   {collection_id: Collection.find_by(title: 'Work').id, feed_id: Feed.find_by(title: 'Gizmodo').id},
   {collection_id: Collection.find_by(title: 'Work').id, feed_id: Feed.find_by(title: 'Digital Trends').id},
-  # {collection_id: Collection.find_by(title: 'Mobile').id, feed_id: Feed.find_by(title: 'Android Police').id},
   {collection_id: Collection.find_by(title: 'Mobile').id, feed_id: Feed.find_by(title: 'Android Central').id},
   {collection_id: Collection.find_by(title: 'Best Tech').id, feed_id: Feed.find_by(title: 'Wired').id},
   {collection_id: Collection.find_by(title: 'Best Tech').id, feed_id: Feed.find_by(title: 'Android Police').id},
-  # {collection_id: Collection.find_by(title: 'Best Tech').id, feed_id: Feed.find_by(title: 'Mac Rumors').id},
   {collection_id: Collection.find_by(title: 'Mobile').id, feed_id: Feed.find_by(title: 'Mac Rumors').id},
   {collection_id: Collection.find_by(title: 'Code').id, feed_id: Feed.find_by(title: 'Coding Horror').id},
   {collection_id: Collection.find_by(title: 'Code').id, feed_id: Feed.find_by(title: 'David Walsh Blog').id},

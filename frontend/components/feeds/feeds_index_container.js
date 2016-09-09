@@ -12,7 +12,7 @@ const feedSort = feeds => {
   }
 
   let sorted = entries.sort((a, b) => {
-    if (a.published > b.published) {
+    if (a.published < b.published) {
       return 1;
     } else if (a.published < b.published) {
       return -1;

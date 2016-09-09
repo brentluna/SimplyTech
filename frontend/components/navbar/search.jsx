@@ -29,7 +29,7 @@ class Search extends React.Component {
     let results = [];
     feeds.forEach(feed => {
       results.push(
-        <Link to={`/feeds/${feed.id}`}>
+        <Link to={`/feeds/${feed.id}`} onClick={this.loseFocus}>
           <li className='search-li'>
             <div className='search-title'>{feed.title}</div>
           </li>
@@ -43,6 +43,8 @@ class Search extends React.Component {
     }
   }
 
+
+
   searchContent() {
     if (this.state.search.length) {
       return this.state.results;
@@ -53,7 +55,6 @@ class Search extends React.Component {
 
   loseFocus() {
     this.setState({search: ''});
-    this.state = '';
   }
 
   backOnFocus() {
@@ -66,7 +67,7 @@ class Search extends React.Component {
       <div className='search-container'>
         <div className='search-div'>
           <i className="material-icons search">search</i>
-          <input onChange={this.updateState} className='search-input' type='text' placeholder="SEARCH" onBlur={this.loseFocus} />
+          <input onChange={this.updateState} className='search-input' type='text' placeholder="SEARCH"  />
         </div>
         <ul className='search-ul'>
           {this.searchContent()}

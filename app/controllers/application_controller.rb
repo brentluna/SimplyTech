@@ -33,6 +33,7 @@ private
   end
 
   def feedjira_entries(feed)
+    puts feed.title
     feed_obj = Feedjira::Feed.fetch_and_parse(feed.url)
     parsed_feed_entries = []
     feed_obj.entries.each do |entry, idx|

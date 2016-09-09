@@ -56,9 +56,9 @@ Users can import feeds they have stored in their Feedly account via a Feedly API
 
 An option  to mark a feed as read, with optional setting to hide them if marked as read.
 
-[add_feeds]: ./docs/screenshots/add_feeds.png
-[add_to_collection]: ./docs/screenshots/add_to_collection.png
-[category]: ./docs/screenshots/category.png
-[search]: ./docs/screenshots/search.png
-[sidebar]: ./docs/screenshots/sidebar.png
-[reader]: ./docs/screenshots/SimplyTech.png
+[add_feeds]: ./app/assets/images/add_feeds.png
+[add_to_collection]: ./app/assets/images/add_to_collection.png
+[category]: ./app/assets/images/category.png
+[search]: ./app/assets/images/search.png
+[sidebar]: ./app/assets/images/sidebar.png
+[reader]: ./app/assets/images/SimplyTech.png

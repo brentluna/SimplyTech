@@ -2,7 +2,24 @@ import React from 'react';
 import ReaderModal from './reader_modal';
 
 
-const FeedIndexItem = ({image, title, summary, feed, url, published, author, onClick}) => (
+const favorite = (image, title, summary, feed, url, published, author, id, addFav, removeFav, inFav) => {
+
+  return (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    let newFavorite = {image, title, summary, feed, url, author, published,id};
+    if (inFav) {
+      removeFav(newFavorite);
+    } else {
+      addFav(newFavorite);
+    }
+  };
+
+};
+
+const FeedIndexItem = ({image, title, summary, feed, url, published, author, onClick, id, addFavorite, removeFavorite, inFavs}) => {
+  return (
     <li onClick={onClick} className='feed-index-item group'>
     <div className='img-div'>
       <img className='feed-index-item-image' src={image} />
@@ -13,10 +30,11 @@ const FeedIndexItem = ({image, title, summary, feed, url, published, author, onC
         <footer>
           <p>{feed}</p>
           <p>{published}</p>
-
+            <i onClick={favorite(image, title, summary, feed, url, published, author, id, addFavorite, removeFavorite, inFavs)} className="material-icons">bookmark_border</i>
         </footer>
       </div>
     </li>
 );
+};
 
 export default FeedIndexItem;

@@ -35,7 +35,7 @@ private
   def feedjira_entries(feed)
     feed_obj = Feedjira::Feed.fetch_and_parse(feed.url)
     parsed_feed_entries = []
-    feed_obj.entries.each do |entry|
+    feed_obj.entries.each do |entry, idx|
       parsed_feed_entries << {
         title: entry.title,
         summary: entry.summary,
@@ -43,7 +43,9 @@ private
         url: entry.url,
         author: entry.author,
         published: entry.published.to_s,
-        feed: feed.id
+        feed: feed.id,
+        id: idx,
+        favorited: false
       }
     end
 

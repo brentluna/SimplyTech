@@ -9,6 +9,35 @@ import {fetchAllFeeds} from '../../actions/feed_actions';
 import { fetchAllCategories, fetchSingleCategory} from '../../actions/category_actions';
 import CollectionOfFeedsContainer from '../collection/collection_of_feeds_container';
 import {fetchAllCollections} from '../../actions/collection_actions';
+import FavoriteContainer from '../../components/feeds/favorites_container';
+import {fetchAllFavorites} from '../../actions/favorite_action';
+
+//
+// const routes = <Router history={hashHistory}>
+//   <Route path='/' component={App} >
+//     <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
+//
+//     <Route path='/feeds' onEnter={this._ensureLoggedIn(store)}>
+//       <IndexRoute component={FeedsIndexContainer} />
+//       <Route path=':feedId' component={FeedsIndexContainer}/>
+//     </Route>
+//
+//     <Route path='/categories' onEnter={this._ensureLoggedIn(store)} >
+//       <IndexRoute component={CategoryIndexContainer} onEnter={(this._categories(store))} />
+//       <Route path=':id' component={CategoryItemDetailContainer} onEnter={this._singleCategory(store)} />
+//     </Route>
+//
+//     <Route path ='/favorites' onenter={this._ensureLoggedIn(store)}>
+//       <IndexRoute component={FavoriteContainer} />
+//     </Route>
+//
+//     <Route path='/collections'>
+//       <IndexRoute component={CollectionOfFeedsContainer}/>
+//       <Route path=':collectionId' component={CollectionOfFeedsContainer} />
+//     </Route>
+//   </Route>
+//
+// </Router>
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -18,6 +47,29 @@ class AppRouter extends React.Component {
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._categories = this._categories.bind(this);
     this._singleCategory = this._singleCategory.bind(this);
+    // this.renderRoutes = this.renderRoutes.bind(this);
+    this.routes = (<Route path='/' component={App} >
+      <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
+
+      <Route path='/feeds' onEnter={this._ensureLoggedIn(this.props.store)}>
+        <IndexRoute component={FeedsIndexContainer} />
+        <Route path=':feedId' component={FeedsIndexContainer}/>
+      </Route>
+
+      <Route path='/categories' onEnter={this._ensureLoggedIn(this.props.store)} >
+        <IndexRoute component={CategoryIndexContainer} onEnter={(this._categories(this.props.store))} />
+        <Route path=':id' component={CategoryItemDetailContainer} onEnter={this._singleCategory(this.props.store)} />
+      </Route>
+
+      <Route path ='/favorites' onEnter={this._ensureLoggedIn(this.props.store)}>
+        <IndexRoute component={FavoriteContainer} />
+      </Route>
+
+      <Route path='/collections' onEnter={this._ensureLoggedIn(this.props.store)}>
+        <IndexRoute component={CollectionOfFeedsContainer}/>
+        <Route path=':collectionId' component={CollectionOfFeedsContainer} />
+      </Route>
+      </Route>)
   }
 
 
@@ -27,7 +79,7 @@ class AppRouter extends React.Component {
     }
   }
 
-  // _ensureLoggedIn(store) {
+  // _ensureLoggedIn(this.props.store) {
   //   return (nextState, replace) => {
   //     if (!this.props.currentUser) {
   //     replace('/');
@@ -61,13 +113,15 @@ class AppRouter extends React.Component {
       if (!this.props.currentUser) {
       replace('/');
       } else {
-
         if (!Object.keys(store.getState().feeds).length) {
-          console.log('fetchAllFeeds from _ensureLoggedIn');
           store.dispatch(fetchAllFeeds());
+          store.dispatch(fetchAllFavorites());
         }
         if (!Object.keys(store.getState().collections).length) {
           store.dispatch(fetchAllCollections());
+        }
+        if (!Object.keys(store.getState().favorites).length) {
+          store.dispatch(fetchAllFavorites());
         }
       }
     };
@@ -92,29 +146,45 @@ class AppRouter extends React.Component {
     };
   }
 
+  // renderRoutes() {
+  //   return (
+
+  //     <Route path='/' component={App} >
+  //       <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
+  //
+  //       <Route path='/feeds' onEnter={this._ensureLoggedIn(store)}>
+  //         <IndexRoute component={FeedsIndexContainer} />
+  //         <Route path=':feedId' component={FeedsIndexContainer}/>
+  //       </Route>
+  //
+  //       <Route path='/categories' onEnter={this._ensureLoggedIn(store)} >
+  //         <IndexRoute component={CategoryIndexContainer} onEnter={(this._categories(store))} />
+  //         <Route path=':id' component={CategoryItemDetailContainer} onEnter={this._singleCategory(store)} />
+  //       </Route>
+  //
+  //       <Route path ='/favorites' onenter={this._ensureLoggedIn(store)}>
+  //         <IndexRoute component={FavoriteContainer} />
+  //       </Route>
+  //
+  //       <Route path='/collections'>
+  //         <IndexRoute component={CollectionOfFeedsContainer}/>
+  //         <Route path=':collectionId' component={CollectionOfFeedsContainer} />
+  //       </Route>
+  //       </Route>
+  //
+  //
+  //
+  //     );
+  // }
+  //
+
+
   render() {
 
     return(
       <Router history={hashHistory}>
-        <Route path='/' component={App} >
-          <IndexRoute component={SplashContainer} onEnter={this._redirectIfLoggedIn}/>
 
-          <Route path='/feeds' onEnter={this._ensureLoggedIn(store)}>
-            <IndexRoute component={FeedsIndexContainer} />
-            <Route path=':feedId' component={FeedsIndexContainer}/>
-          </Route>
-
-          <Route path='/categories' onEnter={this._ensureLoggedIn(store)} >
-            <IndexRoute component={CategoryIndexContainer} onEnter={(this._categories(store))} />
-            <Route path=':id' component={CategoryItemDetailContainer} onEnter={this._singleCategory(store)} />
-          </Route>
-
-          <Route path='/collections'>
-            <IndexRoute component={CollectionOfFeedsContainer}/>
-            <Route path=':collectionId' component={CollectionOfFeedsContainer} />
-          </Route>
-        </Route>
-
+        {this.routes}
       </Router>
     );
   }

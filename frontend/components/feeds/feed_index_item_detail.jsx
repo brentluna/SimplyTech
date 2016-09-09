@@ -9,6 +9,8 @@ const parseSummary = (summary) =>  {
   return result;
   }
 
+
+
 const FeedIndexItemDetail = ({entry: {title, image, summary, author, feed, published, url}}) => {
 
   return (
@@ -25,7 +27,7 @@ const FeedIndexItemDetail = ({entry: {title, image, summary, author, feed, publi
     <footer className='popout-footer'>
       <p>Author: {author}</p>
       <p>{published}</p>
-
+  
     </footer>
   </div>
   );

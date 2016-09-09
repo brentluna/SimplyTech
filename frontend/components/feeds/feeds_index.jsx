@@ -48,9 +48,9 @@ class FeedsIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (!Object.keys(this.props.state.collections).length) {
-      this.props.fetchAllCollections();
-    }
+    // if (!Object.keys(this.props.state.collections).length) {
+    //   this.props.fetchAllCollections();
+    // }
     // if (!Object.keys(this.props.state.feeds).length) {
     //   console.log('fetchAll from inside feedsIndex CDM');
     //   this.props.fetchAllFeeds();
@@ -85,6 +85,8 @@ class FeedsIndex extends React.Component {
   }
 
   feedLis() {
+
+
     let lis = [];
     for (let idx in this.props.feeds) {
       let feed = this.props.feeds[idx];
@@ -92,7 +94,23 @@ class FeedsIndex extends React.Component {
         let entry = feed.entries[i];
 
         let feedTitle = this.feedTitle(entry.feed, entry);
-        lis.push(<FeedIndexItem onClick={this.openModal.bind(this, entry, entry.feed)} title={entry.title} summary={this.parseSummary(entry.summary)} url={entry.url} published={entry.published} image={entry.image} title={entry.title} author={entry.author} feed={feedTitle} key={`${idx + i}${entry.url}`}/>);
+        lis.push(
+          <FeedIndexItem
+          onClick={this.openModal.bind(this, entry, entry.feed)} title={entry.title}
+          summary={this.parseSummary(entry.summary)}
+          url={entry.url}
+          published={entry.published}
+          image={entry.image}
+          title={entry.title}
+          author={entry.author}
+          id={entry.id}
+          feed={feedTitle}
+          addFavorite={this.props.addFavorite}
+          removeFavorite={this.props.removeFavorite}
+          inFavs={this.props.favs}
+          key={`${idx + i}${entry.url}`}
+          />
+        );
       }
     }
     return lis;
@@ -100,7 +118,7 @@ class FeedsIndex extends React.Component {
 
   render() {
     let content = null;
-    if (Object.keys(this.props.feeds).length) {
+    if (Object.keys(this.props.feeds).length || this.props.favs) {
       content = this.feedLis();
     } else {
       content = <Loading className='loading-bars' type='bars' color='#7e5bbe' style='width: 300px; height: 400px;' />;

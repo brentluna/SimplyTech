@@ -4,7 +4,8 @@ import {fetchAllFeeds} from '../../actions/feed_actions';
 
 const mapStateToProps = state => ({
   collections: state.collections,
-  loggedIn: state.session.currentUser
+  loggedIn: state.session.currentUser,
+  favs: false
 });
 
 const mapDispatchToProps = dispatch => ({

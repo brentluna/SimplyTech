@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import FeedsIndex from './feeds_index';
 import {fetchAllFeeds} from '../../actions/feed_actions';
 import {fetchAllCollections} from '../../actions/collection_actions';
+import {addFavorite, removeFavorite} from '../../actions/favorite_action';
 
 const feedSort = feeds => {
   let entries = [];
@@ -38,13 +39,16 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     feeds: feedState,
     feedObjs: state.feeds,
-    state: state
+    state: state,
+    favs: false
   });
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchAllFeeds: () => dispatch(fetchAllFeeds()),
-  fetchAllCollections: () => dispatch(fetchAllCollections())
+  fetchAllCollections: () => dispatch(fetchAllCollections()),
+  addFavorite: favorite => dispatch(addFavorite(favorite)),
+  removeFavorite: favorite => dispatch(removeFavorite(favorite))
 });
 
 

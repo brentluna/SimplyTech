@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :categories, only: [:show, :index]
     resources :collections
     resources :collection_feeds, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy, :show, :index]
   end
 end

@@ -20,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
 
     feeds: collection,
     feedObjs: state.feeds,
-    state: state
+    state: state,
+    favs: false
 
   });
 };

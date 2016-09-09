@@ -105,7 +105,7 @@ class CollectionAddForm extends React.Component {
   createNewCollection(e) {
     e.preventDefault();
 
-    debugger
+
     if (this.state.newCollectionName.length) {
       this.props.addCollection(this.state.newCollectionName);
       this.setState({newCollectionName: '', newVisible: false});

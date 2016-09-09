@@ -37,7 +37,7 @@ export const deleteCollection = (id, success) => (
 );
 
 export const addCollection = (collection, success) => {
-  debugger
+
   return (
   $.ajax({
     method: 'POST',

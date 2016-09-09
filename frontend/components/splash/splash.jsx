@@ -14,11 +14,30 @@ class Splash extends React.Component {
     return (
       <main className='splash-container'>
       <section className='splash-section'>
-        <h1 className='splash-header'>Welcome to simply<span>T</span>ech</h1>
-          <p className='splash-text'>Your one stop source for everything Tech</p>
-        {button}
+      <div className='splash-header-container'>
+
+          <h1 className='splash-header'>Welcome to simply<span>T</span>ech</h1>
+            <p className='splash-text'>Your one stop source for everything Tech</p>
+          {button}
+        </div>
         {/* <div className='splash-image'> */}
-        <img src='https://s3.amazonaws.com/user-media.venngage.com/558588-e5865108d947677358534d37ceb1f464.jpg'/>
+        <ul className='splash-ul'>
+          <li className='splash-li'>
+            <img src='/assets/sidebar.png'/>
+          </li>
+          <li className='splash-li'>
+            <img src='/assets/category.png'/>
+          </li>
+          <li className='splash-li'>
+            <img src='/assets/SimplyTech.png'/>
+          </li>
+          <li className='splash-li'>
+            <img src='/assets/add_feeds.png'/>
+          </li>
+          <li className='splash-li'>
+            <img src='/assets/add_to_collection.png'/>
+          </li>
+        </ul>
         {/* </div> */}
       </section>
       </main>

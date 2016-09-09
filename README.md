@@ -1,128 +1,64 @@
-# SimplyTech
+# simplyTech
 
-#### [Heroku link][heroku]
+[Live Site](http://simplyTech.us)
 
-[heroku]: https://simply-tech.herokuapp.com/
+simplyTech is a full-stack web application inspired by the RSS Feed Aggregator [Feedly](http://feedly.com/), allowing users to pick the tech related feeds that are of interest. This application was built using Ruby on Rails with a PostgresSQl database for the back-end and uses React.js and Redux architectural pattern for the Front-End.
 
+## Features & Implementation
 
-## Minimum Viable Product
+### Single-Page App
 
-SimplyTech is a web application inspired by Feedly, built using Ruby on Rials and React/Redux. By the end of week 9, this app, at minimum will satisfy the following criteria:
+simplyTech is a single-page app allowing for seamless transition between activities. Built using React Components, the application stands on a single static html page, that mounts different React Components depending on the route.
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- Feeds
-  - [ ] Users can view articles
-  - [ ] Article preview component will slide out when clicked
-  - [ ] Search bar will autopopulate matching feeds
-- Categories
-  - [ ] Feeds are grouped by categories
-  - [ ] Feeds can be subscribed to via their CategoryIndexItem page
-- Collections
-  - [ ] Feeds can be subscribed to and added to a collection
-  - [ ] Can view a collection which shows all subscribed feeds of collection
-- [ ]
-- [ ] Production README
+### RSS Feeds
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Redux Structure][redux-structure]
-* [Sample State][sample-state]
+Upon a user signing in the app will make an ajax request to the Feeds controller that will pull from the Feeds database the list of possible Feeds, and using the Feedjira Gem in combination with JBuilder, it will parse each feed, creating an object of the feed with all of it's article entries. After this initial database request, you are able to move around the app seamlessly with very little loading time required.
 
-[wireframes]: docs/wireframes
-[components]: docs/component-heirarchy.md
-[redux-structure]: docs/redux-structure.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+![reader]
 
-## Implementation Timeline
+![sidebar]
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Categories
 
-**Objective:** Functioning rails project with front-end Authentication
+This is a tech themed Feed Aggregator, which has a variety of different tech related categories. The categories store Feeds related to them, in order to help users easily find new feeds that may interest them.
 
-- [ ] New Rails project
-- [ ] `User` model/migration
-- [ ] Back end authentication (session/password)
-- [ ] `StaticPages` controller and root view
-- [ ] Webpack & react/redux modules
-- [ ] `APIUtil` to interact with the API
-- [ ] Redux cycle for frontend authentication
-- [ ] User signup/signin components(modal?)
-- [ ] Blank landing component after signup/signin
-- [ ] Style signup/signin components
-- [ ] Seed users
-- [ ] Review phase 1
+![category]
 
-### Phase 2: Feeds Model, API, and components (2 days)
+### Collecitons
 
-**Objective:** FeedIndex will display multiple RSS feeds and display FeedIndexItemDetail when clicked.
+Collections are how a user can organize which feeds they subscribe to. I used a join table in my database to link columns from the Feeds table to columns in the Collections table, allowing a many-to-many relationship.
 
-- [ ] `Feed` model
-- [ ] Seed database with a small amount of test data using Feedjira
-- [ ] CRUD API for Feeds (`FeedsController, #show, #index`)
-- [ ] JBuilder views for feeds
-- Feed components and respective Redux loops
-  - [ ] `FeedsIndex`
-  - [ ] `FeedIndexItem`
-  - [ ] `FeedIndexItemDetail`
-- [ ] Style Feeds components
+![add_to_collection]
 
+![add_feeds]
 
-### Phase 3: Category Mode, SourceCategory Model  (1 day)
+### Search
 
-**Objective:** Feeds will be grouped in categories
+The search feature is used to quickly find and go to a specific Feeds page, allowing the user to get to the content he wants quickly. The search makes ajax requests via the inputs onChange listener, allowing for an autocomplete dropdown, matching and updating possible Feeds as the user types each letter.
 
-- [ ] 'Category' model
-- [ ] 'SourceCategory' model
-- [ ] CategoriesController #show #index
-- [ ] APIUtil to fetch categories and their sources
-- [ ] Seed Category Data
+![search]
 
-### Phase 4: Subscriptions Model, API (1day)
+### Saved Articles
 
-**objective:** Users can subscribe to feeds
+The feeds have a bookmark icon, which when clicked will send an ajax request storing the article in the database, so it will no longer be reliant on it's Feed parent, and will persist in a Saved Articles Collection as long as the user wishes. The user has the option to remove the Saved Article by clicking the bookmark icon from the saved articles collection, which will delete the article from the database.
 
-- [ ] SubscriptionsController #index, #create, #destroy
-- [ ] APIUtil to fetch subscribed feeds
+## Future Features
 
-### Phase 5: Collections &CollectionSubscriptions Model  (2 days)
+### Number of Hits per article
 
-**Objective:** Subscriptions to sources belong to collections
+The Articles will include a read count column in the database, that increments each time an article is opened, allowing a read count to be displayed
 
-- [ ] `Collection` model
-- [ ] 'CollectionsController' #new, #create, #edit, #update, #destroy #show, #index
-- [ ] 'CollectionSubscriptions' model
-- [ ] CRUD API for Collections (`CollectionsController`)
-- [ ] Deleting Subscriptions from Collections
-- [ ] Seed Collections
+### Users can Import Feeds from their Feedly account
 
+Users can import feeds they have stored in their Feedly account via a Feedly API
 
-### Phase 7: - Styling and Seed Data (2 days)
+### Users can makrk feeds as read
 
-**objective:** Improve styling details
+An option  to mark a feed as read, with optional setting to hide them if marked as read.
 
-- [ ] Make sure style is cohesive across all components
-- [ ] Add Hover and transitions animations
-- [ ] Make sure seed data is Robust enough to have 5+ sources per cateogry
-
-### Phase 7: - Work on Bonus Features
-**objective:** Add Bonus Features with remaining time
-
-- Prioritize features as follows
-  - [ ] Favorites
-  - [ ] Search
-  - [ ] Mark as read
-  - [ ] Toggle Feeds List Style
-
-
-### Bonus Features (TBD)
-- [ ] Search for Sources with autocomplete dropdown
-- [ ] Users can save/favorite articles for later
-- [ ] Toggle for Compact List or Detailed List view
-- [ ] Display articles as read if clicked on
-- [ ] Multiple sessions
+[add_feeds]: ./docs/screenshots/add_feeds.png
+[add_to_collection]: ./docs/screenshots/add_to_collection.png
+[category]: ./docs/screenshots/category.png
+[search]: ./docs/screenshots/search.png
+[sidebar]: ./docs/screenshots/sidebar.png
+[reader]: ./docs/screenshots/SimplyTech.png

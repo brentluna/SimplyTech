@@ -35,7 +35,10 @@ private
   def feedjira_entries(feed)
     feed_obj = Feedjira::Feed.fetch_and_parse(feed.url)
     parsed_feed_entries = []
+    counter = 0
     feed_obj.entries.each do |entry, idx|
+      break if counter == 12
+      counter += 1
       parsed_feed_entries << {
         title: entry.title,
         summary: entry.summary,
@@ -66,7 +69,7 @@ private
   end
 
   def limited_ordered_entries(collection)
-    ordered_entries(collection)[0..20]
+    ordered_entries(collection)[0..12]
   end
 
   def user_ordered_entries(feeds)

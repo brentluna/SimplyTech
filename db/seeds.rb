@@ -31,7 +31,7 @@ Feed.create!([
 # {title: "ZDNet", url: "http://www.zdnet.com/rssfeeds/", description: "ZDNet's breaking news, analysis, and research keeps business technology professionals in touch with the latest IT trends, issues and events.", logo: "https://pbs.twimg.com/profile_images/706961982545473536/Ibj46-DX.jpg"},
 {title: "How-To Geek", url: "http://feeds.howtogeek.com/HowToGeek/", description: "Includes help, tutorials, tips and how-to guides for Windows and Linux.", logo: "https://pbs.twimg.com/profile_images/715229294/geek-204x204_400x400.png"},
 {title: "Gamasutra", url: "http://feeds.feedburner.com/GamasutraFeatureArticles/", description: "The online free version of Game Developer Magazine. Weekly articles on game design and threads for discussion.", logo: "http://deepfreeze.it/img/j_logos/logo_gamasutra.png"},
-{title: "David Walsh Blog", url: "https://davidwalsh.name/feed", description: "A blog featuring tutorials about JavaScript, HTML5, AJAX, PHP, CSS, WordPress, and everything else development.", logo: "https://davidwalsh.name/wp-content/themes/punky/images/logo.png"},
+{title: "David Walsh Blog", url: "https://davidwalsh.name/feed", description: "A blog featuring tutorials about JavaScript, HTML5, AJAX, PHP, CSS, WordPress, and everything else development.", logo: "https://davidwalsh.name/wp-content/themes/punky/images/logo.png"}
 ])
 
 
@@ -78,7 +78,7 @@ Collection.create!([
   {title: 'Work', user_id: User.find_by(email: 'user@demo.com').id},
   {title: 'Mobile', user_id: User.find_by(email: 'user@demo.com').id},
   {title: 'Gaming', user_id: User.find_by(email: 'user@demo.com').id},
-  {title: 'Code', user_id: User.find_by(email: 'user@demo.com').id},
+  {title: 'Code', user_id: User.find_by(email: 'user@demo.com').id}
   ])
 
 CollectionFeed.create!([

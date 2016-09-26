@@ -91,13 +91,13 @@ class SessionForm extends React.Component {
     return(
       <div className='login-form-container'>
         <form  className='login-form'>
+
+        <h1 className='login-form-title'>simply<span>T</span>ech</h1>
           {this.renderErrors()}
-          <label>Email</label>
-            <input type='text' value={this.state.email} onChange={this.update('email')} className='login-input'/>
+            <input type='text' placeholder='Email' value={this.state.email} onChange={this.update('email')} className='login-input'/>
 
 
-          <label>Password</label>
-            <input type='password' value={this.state.password} onChange={this.update('password')} className='login-input'/>
+            <input type='password' placeholder='Password' value={this.state.password} onChange={this.update('password')} className='login-input'/>
 
 
           <div className='login-button-container'>
@@ -105,7 +105,7 @@ class SessionForm extends React.Component {
 
             <input type='submit' value='Signup' onClick={this.handleSignup} className='login-button' />
 
-            <input type='submit' value='Demo Login' onClick={this.demoLogin} className='login-button' />
+            <input type='submit' value='Demo' onClick={this.demoLogin} className='login-button' />
           </div>
         </form>
       </div>

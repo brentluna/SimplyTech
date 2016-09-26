@@ -12,6 +12,7 @@
 
 .login-button {
   border: 1px solid #ccc;
+  color: white;
   background: #55c3f4;
   padding: 10px;
   margin: 10px 0;
@@ -35,6 +36,7 @@
   display: flex;
   width: 400px;
   padding: 50px;
+  padding-top: 16px;
 }
 
 .modal-text {
@@ -99,6 +101,17 @@
   width: 80%;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
+}
+
+.login-form-title {
+    font-family: 'Righteous';
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 34px;
+} 
+
+.login-form-title span {
+  color: #55c3f4;
 }
 
 .splash-image img {

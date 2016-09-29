@@ -45,7 +45,7 @@
 
 /* Splash Page */
 .splash-container {
-  background: #eee;
+  background: smokewhite;
   height: 80%;
 }
 
@@ -93,7 +93,7 @@
 }
 .splash-ul {
   padding-bottom: 80px;
-  background: #55c3f4;
+  background: smokewhite;
 }
 .splash-li {
   margin: 40px auto;
@@ -109,6 +109,8 @@
     font-size: 34px;
 } 
 
+
+
 .login-form-title span {
   color: #55c3f4;
 }
@@ -121,4 +123,44 @@
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   z-index: 14;
+}
+
+/*****Feature Splash ***/
+ .feature {
+  font-size: 36px;
+  color: #55c3f4;
+ }
+
+ .splash-feature-ul {
+  display: flex;
+  background: white;
+  padding: 20px 50px 20px 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ }
+
+ .feature-div {
+  font-size: 14px;
+  font-weight: lighter;
+  width: 130px;
+  padding: 20px;
+  display: flex;
+
+ }
+
+ .feature-div h4 {
+  margin: 8px 0px;
+ }
+
+ .icon-title-div {
+  display: flex;
+  flex-direction: column; 
+  padding-left: 20px;
+ }
+
+.splash-feature-ul li {
+}
+
+.icon-title-div p {
+  min-width: 120px
 }

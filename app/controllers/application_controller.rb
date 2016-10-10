@@ -48,7 +48,7 @@ private
         published: entry.published.to_s,
         feed: feed.id,
         id: idx,
-        favorited: false
+        favorited: false 
       }
     end
 

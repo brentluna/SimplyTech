@@ -20,6 +20,10 @@
   }
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 .sidebar-category-button {
   margin: 10px auto;
   color: #eee;

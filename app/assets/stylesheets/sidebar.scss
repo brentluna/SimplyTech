@@ -20,9 +20,14 @@
   }
 }
 
-::-webkit-scrollbar { 
-    display: none; 
-}
+// ::-webkit-scrollbar { 
+//     display: none; 
+// }
+
+// .sidebar-content-div {
+//   overflow: hidden;
+//   min-width: 180px;
+// }
 
 .sidebar-category-button {
   margin: 10px auto;
@@ -146,4 +151,6 @@
   justify-content: space-between;
   min-width: 180px;
   overflow-y: scroll;
+  margin-right: -100px;
+  padding-right: 100px;
 }

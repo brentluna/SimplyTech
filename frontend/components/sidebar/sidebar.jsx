@@ -61,10 +61,11 @@ class Sidebar extends React.Component {
           <Hamburger />
         </div>
         <div className='spacer'></div>
-        <div className='sidebar-content-container'>
-          {this.categoryButton()}
-          {this.sideContent()}
-        </div>
+
+          <div className='sidebar-content-container'>
+            {this.categoryButton()}
+            {this.sideContent()}
+          </div>
         <div className='spacer'></div>
         {this.footer()}
       </aside>

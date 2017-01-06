@@ -1,11 +1,18 @@
 import {CollectionConstants, receiveAllCollections, receiveSingleCollection} from '../actions/collection_actions';
 import {fetchAllCollections, fetchSingleCollection, addCollection} from '../util/collection_api_util';
+import {hashHistory} from 'react-router';
 
 const CollectionMiddleware = store => next => action => {
 
   switch (action.type) {
     case CollectionConstants.FETCH_ALL_COLLECTIONS:
-      const allSuccess = collections => store.dispatch(receiveAllCollections(collections))
+      const allSuccess = collections => {
+        store.dispatch(receiveAllCollections(collections))
+        if (!Object.keys(collections).length) {
+          debugger
+          hashHistory.push('/categories')
+        }
+      }
       fetchAllCollections(allSuccess);
       return next(action);
 

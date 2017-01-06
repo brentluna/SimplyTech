@@ -190,6 +190,7 @@ DEPENDENCIES
   feedjira
   jbuilder (~> 2.0)
   jquery-rails
+  json
   newrelic_rpm
   pg (~> 0.15)
   pry-rails
@@ -202,4 +203,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.5
+   1.13.7

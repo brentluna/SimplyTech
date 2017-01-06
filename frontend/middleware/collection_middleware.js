@@ -9,7 +9,6 @@ const CollectionMiddleware = store => next => action => {
       const allSuccess = collections => {
         store.dispatch(receiveAllCollections(collections))
         if (!Object.keys(collections).length) {
-          debugger
           hashHistory.push('/categories')
         }
       }
